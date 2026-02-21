@@ -282,17 +282,7 @@ imageReveal();
       });
     }
 
-    // Animacje postępu przewijania
-    gsap.to(".scrollprogress", {
-      height: "100vh",
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scrollContainer",
-        start: "top 0%",
-        end: "bottom 99%",
-        scrub: true,
-      },
-    });
+
   }
 
 }
