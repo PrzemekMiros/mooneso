@@ -77,29 +77,40 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
     <ViewTransitions />
     <LoadingIndicator color="var(--accent)" height="3px" animationDuration={400} threshold={200} />
     <style is:inline>
-      ::view-transition-old(root) {
-        animation: fade-out 160ms ease;
+      /* Animate only main content; keep header static */
+      main[data-astro-transition="page"] {
+        view-transition-name: main-content;
       }
-      ::view-transition-new(root) {
-        animation: fade-in 160ms ease;
+      header[data-astro-transition-persist="header"] {
+        view-transition-name: none;
       }
-      @keyframes fade-in {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      ::view-transition-old(main-content) {
+        animation: slide-up-out 620ms ease forwards;
       }
-      @keyframes fade-out {
-        from { opacity: 1; }
-        to { opacity: 0; }
+      ::view-transition-new(main-content) {
+        animation: slide-up-in 620ms ease forwards;
+      }
+      @keyframes slide-up-out {
+        from { transform: translateY(0); }
+        to   { transform: translateY(-100vh); }
+      }
+      @keyframes slide-up-in {
+        from { transform: translateY(100vh); }
+        to   { transform: translateY(0); }
       }
     </style>
   </head>
   <body class="min-h-screen bg-[#E5E4E0] font-sans text-[var(--text)]">
-    <main class="mx-auto flex min-h-screen w-full max-w-[1420px] flex-col px-4 sm:px-10 lg:px-12">
-      <Header settings={settings} logoAsset={logoAsset} />
+    <Header settings={settings} logoAsset={logoAsset} />
+    <main
+      data-astro-transition="page"
+      class="mx-auto flex min-h-screen w-full max-w-[1420px] flex-col px-4 sm:px-10 lg:px-12"
+    >
       {showHero && title ? <PageHero title={title} lead={description} meta={heroMeta} /> : null}
       <slot />
-      <Footer/>
     </main>
+
+    <Footer/>
     <script is:inline>
       const applyBlurLazy = () => {
         document.querySelectorAll("main img").forEach((img) => {
