@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroFull from "../components/home/HeroFull.astro";
 import Description from "../components/home/Description.astro";
+import AboutUs from "../components/home/AboutUs.astro";
 import settings from "../content/ustawienia.json";
 
 const { site } = Astro;
@@ -25,5 +26,6 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
   </div>
 	<HeroFull />
   <Description />
+  <AboutUs />
 
 </BaseLayout>
