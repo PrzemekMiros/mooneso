@@ -55,7 +55,7 @@
 }
 
 :root {
-  --accent: #d43a1f;
+  --accent: #C5A47E;
   --surface: #ffffff;
   --surface-muted: #f7f5f2;
   --bg: #ffffff;
@@ -98,12 +98,13 @@ p {
 .decorative-text,
 [data-decorative] {
   font-family: var(--font-decorative);
+  line-height: 1.2;
 }
 
 .line-x {
   width: 100%;
   height: 1px;
-  background: var(--border);
+  background: var(--accent);
 }
 
 .line-parent { 

@@ -1,5 +1,22 @@
-<section class="relative pb-24 pt-36 md:pb-34 md:pt-50">
-  <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+---
+import { Image } from "astro:assets";
+import ParallaxImage from "../../assets/images/sections/bed.png";
+---
 
+<section class="relative pb-24 pt-36 md:pb-38 md:pt-44">
+  <div class="relative">
+    <div class="reveal reveal--top">
+    <div class="parallax-wrap">
+    <Image
+      src={ParallaxImage}
+      alt="Łóżko w aranżacji"
+      class="w-full h-auto"
+      widths={[480, 768, 1024, 1440]}
+      sizes="100vw"
+      loading="lazy"
+      decoding="async"
+    />
+    </div>
+    </div>
   </div>
 </section>

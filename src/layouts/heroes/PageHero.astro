@@ -15,7 +15,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
         itemtype="https://schema.org/BreadcrumbList"
       >
         <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href={homeUrl} itemprop="item" class="hover:text-white">
+          <a href={homeUrl} itemprop="item" class="hover:text-black">
             <span itemprop="name">Główna</span>
           </a>
           <meta itemprop="position" content="1" />
@@ -23,7 +23,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
         <span class="text-[var(--accent)]"> > </span>
         <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <meta itemprop="item" content={currentUrl} />
-          <span class="text-white" itemprop="name">
+          <span class="text-black-80" itemprop="name">
             {title}
           </span>
           <meta itemprop="position" content="2" />
