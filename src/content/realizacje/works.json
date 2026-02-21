@@ -1,5 +1,0 @@
-{
-    "layout": "layouts/case.njk",
-    "permalink": "/realizacje/{{ title | slugify }}/",
-    "robots": "noindex"
-}

@@ -90,7 +90,6 @@ splitTextChars.forEach(element =>{
          from: "0"
        },
        scrollTrigger: { 
-         scroller: "body",
          trigger: element,
          //toggleActions: 'restart pause reverse pause',
        },
@@ -124,7 +123,6 @@ splitTextLetters.forEach(element =>{
          from: "0"
        },
        scrollTrigger: { 
-         scroller: "body",
          trigger: element,
          //toggleActions: 'restart pause reverse pause',
        },
@@ -195,7 +193,6 @@ function imageReveal() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        scroller: "body",
         start: "top bottom",
         end: "bottom top",
       }
