@@ -85,18 +85,18 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
         view-transition-name: none;
       }
       ::view-transition-old(main-content) {
-        animation: slide-up-out 620ms ease forwards;
+        animation: slide-up-out 220ms ease forwards;
       }
       ::view-transition-new(main-content) {
-        animation: slide-up-in 620ms ease forwards;
+        animation: slide-up-in 220ms ease forwards;
       }
       @keyframes slide-up-out {
-        from { transform: translateY(0); }
-        to   { transform: translateY(-100vh); }
+        from { opacity: 1; }
+        to   { opacity: 0; }
       }
       @keyframes slide-up-in {
-        from { transform: translateY(100vh); }
-        to   { transform: translateY(0); }
+        from { opacity: 0; }
+        to   { opacity: 1; }
       }
     </style>
   </head>
