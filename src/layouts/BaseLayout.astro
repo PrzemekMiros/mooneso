@@ -1,7 +1,5 @@
 ---
 import settings from "../content/ustawienia.json";
-import { ClientRouter, ViewTransitions } from "astro:transitions";
-import LoadingIndicator from "astro-loading-indicator/component";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PageHero from "./heroes/PageHero.astro";
@@ -73,44 +71,43 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <ClientRouter />
-    <ViewTransitions />
-    <LoadingIndicator color="var(--accent)" height="3px" animationDuration={400} threshold={200} />
     <style is:inline>
-      /* Animate only main content; keep header static */
-      main[data-astro-transition="page"] {
-        view-transition-name: main-content;
+      /* swup.js page transition */
+      .swup-transition {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 420ms ease, transform 420ms ease;
       }
-      header[data-astro-transition-persist="header"] {
-        view-transition-name: none;
+      html.is-changing .swup-transition {
+        opacity: 0;
+        transform: translateY(-24px);
       }
-      ::view-transition-old(main-content) {
-        animation: slide-up-out 220ms ease forwards;
-      }
-      ::view-transition-new(main-content) {
-        animation: slide-up-in 220ms ease forwards;
-      }
-      @keyframes slide-up-out {
-        from { opacity: 1; }
-        to   { opacity: 0; }
-      }
-      @keyframes slide-up-in {
-        from { opacity: 0; }
-        to   { opacity: 1; }
+      html.is-rendering .swup-transition {
+        opacity: 0;
+        transform: translateY(24px);
       }
     </style>
   </head>
   <body class="min-h-screen bg-[#E5E4E0] font-sans text-[var(--text)]">
     <Header settings={settings} logoAsset={logoAsset} />
     <main
-      data-astro-transition="page"
-      class="mx-auto flex min-h-screen w-full max-w-[1420px] flex-col px-4 sm:px-10 lg:px-12"
+      id="swup"
+      class="swup-transition mx-auto flex min-h-screen w-full max-w-[1420px] flex-col px-4 sm:px-10 lg:px-12"
     >
       {showHero && title ? <PageHero title={title} lead={description} meta={heroMeta} /> : null}
       <slot />
     </main>
 
     <Footer/>
+    <script type="module" is:inline>
+      import Swup from "https://unpkg.com/swup@4?module";
+      if (!window.__swup) {
+        window.__swup = new Swup({
+          containers: ["#swup"],
+          animateHistoryBrowsing: true,
+        });
+      }
+    </script>
     <script is:inline>
       const applyBlurLazy = () => {
         document.querySelectorAll("main img").forEach((img) => {
