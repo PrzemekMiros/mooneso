@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugifyTitle } from "../../lib/slugifyTitle";
+
+const entries = import.meta.glob("../../content/artykuly/**/*.md", { eager: true });
+const totalPosts = Object.keys(entries).length;
+const toDate = (value) => {
+  if (!value) return null;
+  return typeof value === "string" ? new Date(value) : value;
+};
+const ensureArray = (value) => {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+};
+
+const allPosts = Object.entries(entries).map(([file, entry]) => {
+  const slug = file.split("/").pop().replace(".md", "");
+  const post = { slug, ...entry.frontmatter };
+  return {
+    ...post,
+    _date: toDate(post.date),
+  };
+});
+
+const postsWithTags = allPosts.filter((post) => {
+  return ensureArray(post.tags).some((tag) => typeof tag === "string" && tag.trim().length);
+});
+
+const tagGroups = new Map();
+
+postsWithTags.forEach((post) => {
+  const tags = ensureArray(post.tags);
+  tags.forEach((tag) => {
+    if (!tag || typeof tag !== "string") return;
+    const trimmed = tag.trim();
+    if (!trimmed) return;
+    const key = trimmed.toLowerCase();
+    const group = tagGroups.get(key);
+    if (group) {
+      group.posts.push(post);
+    } else {
+      tagGroups.set(key, { name: trimmed, posts: [post] });
+    }
+  });
+});
+
+const categories = Array.from(tagGroups.values()).map((group) => ({
+  name: group.name,
+  slug: slugifyTitle(group.name),
+  posts: [...group.posts].sort((a, b) => {
+    const aTime = a._date ? a._date.getTime() : 0;
+    const bTime = b._date ? b._date.getTime() : 0;
+    return bTime - aTime;
+  }),
+}));
+
+const sortedCategories = [...categories].sort((a, b) => {
+  const countDiff = b.posts.length - a.posts.length;
+  if (countDiff !== 0) return countDiff;
+  return a.name.localeCompare(b.name, "pl");
+});
+
+const uniqueTaggedPosts = new Set(postsWithTags.map((post) => post.slug)).size;
+const previewLimit = 0;
+const formatDate = (value) => {
+  if (!value) return "";
+  return value.toLocaleDateString("pl-PL", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+};
+const pluralizePosts = (value) => {
+  if (value === 1) return "wpis";
+  if (value >= 2 && value <= 4) return "wpisy";
+  return "wpisów";
+};
+
+export const prerender = true;
+---
+
+<BaseLayout
+  title="Kategorie artykułów"
+  description="Zobacz, do jakich kategorii przypisałem dotychczasowe artykuły i szybko przejdź do tych, które najbardziej Cię interesują."
+>
+  <section class="flex max-w-9xl flex-col gap-10 py-18">
+
+    {sortedCategories.length ? (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {sortedCategories.map((category) => {
+          return (
+            <article key={category.name} class="group relative rounded-3xl border border-[var(--border)] bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-lg">
+                <div>
+                <span class="rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.4em] text-[var(--accent)]">
+                  {category.posts.length} {pluralizePosts(category.posts.length)}
+                </span>
+                  <h2 class="mt-2 text-2xl font-semibold text-[var(--text)]">{category.name}</h2>
+                </div>
+              <p class="mt-4 text-xs text-[var(--muted)] uppercase tracking-[0.1em]">
+                Ostatni wpis: {formatDate(category.posts[0]?._date)}
+              </p>
+              <div class="mt-6 h-[120px] rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)]/40"></div>
+              <a href={`/tags/${category.slug}/`} class="absolute inset-0" aria-label={`Zobacz kategorię: ${category.name}`}></a>
+            </article>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 p-6 text-center text-sm text-[var(--muted)]">
+        Nie udało się znaleźć żadnej kategorii. Dodaj tagi do wpisów w
+        <code class="mx-1 rounded bg-[var(--surface-muted)] px-2 py-0.5 text-[var(--text)]">src/content/artykuly</code>,
+        a lista pojawi się tutaj automatycznie.
+      </div>
+    )}
+  </section>
+</BaseLayout>

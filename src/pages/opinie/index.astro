@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import settings from "../../content/ustawienia.json";
+
+const entries = import.meta.glob("../../content/opinie/*.md", { eager: true });
+const imageEntries = import.meta.glob("/src/content/opinie/img/**/*", { eager: true });
+const reviewImageEntries = import.meta.glob("/src/content/reviews/img/**/*", { eager: true });
+const resolveOpinionImage = (path) => {
+  if (!path) return null;
+  let normalized = path.startsWith("/src/") ? path : `/src${path}`;
+  normalized = normalized.replace("/src/content/reviews/img/", "/src/content/opinie/img/");
+  const entry = imageEntries[normalized] ?? reviewImageEntries[normalized];
+  return entry?.default ?? null;
+};
+
+const testimonials = Object.values(entries)
+  .map((mod) => {
+    const { title, client, review, name, role, quote, order, clientlogo, avatar } = mod.frontmatter ?? {};
+    return {
+      name: name ?? title,
+      role: role ?? client,
+      quote: quote ?? review,
+      clientlogo,
+      avatar,
+      order,
+    };
+  })
+  .filter((item) => item && item.name && item.quote)
+  .sort((a, b) => {
+    const orderA = typeof a.order === "number" ? a.order : Number.MAX_SAFE_INTEGER;
+    const orderB = typeof b.order === "number" ? b.order : Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
+    return String(a.name).localeCompare(String(b.name));
+  });
+
+const ratingValue = 5;
+const ratingCount = 15;
+---
+
+<BaseLayout
+  title="Opinie klientów"
+  description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
+>
+  <section
+    class="relative pb-16 pt-16"
+    itemscope
+    itemtype="https://schema.org/Organization"
+  >
+    <meta itemprop="name" content={settings.siteTitle} />
+    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+      <meta itemprop="ratingValue" content={String(ratingValue)} />
+      <meta itemprop="bestRating" content="5" />
+      <meta itemprop="ratingCount" content={String(ratingCount)} />
+    </div>
+    <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-2xl bg-white"></div>
+    <div class="relative text-black">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {testimonials.map((item) => {
+          const cardClass = "bg-white text-black";
+          const roleClass = "text-gray-500";
+          const brandClass = "text-black";
+          return (
+            <div
+              class={`flex min-h-[400px] flex-col justify-between border border-black/20 rounded-2xl py-8 px-5 md:px-10 ${cardClass}`}
+              itemprop="review"
+              itemscope
+              itemtype="https://schema.org/Review"
+            >
+              <div>
+                <div class="mb-12">
+                  <span class="rounded-full px-4 py-1.5 border border-black/20 text-sm font-bold uppercase tracking-wider bg-white text-[var(--accent)]">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </span>
+                </div>
+                <blockquote class="text-xl font-medium text-black/90 leading-snug" itemprop="reviewBody">
+                  "{item.quote}"
+                </blockquote>
+              </div>
+              <div class="mt-12 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div>
+                    <p class="font-bold" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                      <span itemprop="name">{item.name}</span>
+                    </p>
+                    {item.role ? <p class={`text-sm ${roleClass}`}>{item.role}</p> : null}
+                  </div>
+                </div>
+                <div class="opacity-90">
+                  {resolveOpinionImage(item.avatar) ? (
+                    <Image
+                      src={resolveOpinionImage(item.avatar)}
+                      alt={`Avatar ${item.name}`}
+                      class="h-12 w-12 rounded-full object-cover"
+                      widths={[96]}
+                      sizes="48px"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span class={`text-lg font-bold uppercase tracking-widest ${brandClass}`}>
+                      {item.role ?? "Klient"}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

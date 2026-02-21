@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugifyTitle } from "../../lib/slugifyTitle";
+import { resolveContentImage } from '../../utils/resolveContentImage';
+
+// 1. Pobieramy kolekcję
+const allRealizacje = await getCollection('realizacje');
+
+// 2. Sortujemy według pola 'order' malejąco (np. 10, 9, 8... 1)
+// Dzięki temu numer 1 będzie na samym końcu listy.
+const items = allRealizacje.sort((a, b) => b.data.order - a.data.order);
+
+const categories = Array.from(
+  items.reduce((set, item) => {
+    const tags = Array.isArray(item.data.category) ? item.data.category : item.data.category ? [item.data.category] : [];
+    tags.forEach((tag) => set.add(tag));
+    return set;
+  }, new Set())
+)
+  .map((label) => ({ label, slug: slugifyTitle(label) }))
+  .sort((a, b) => a.label.localeCompare(b.label, "pl-PL"));
+
+---
+
+<BaseLayout
+  title="Wybrane realizacje"
+  description="Galeria wybranych projektów i wdrożeń. Zobacz szczegóły realizacji i zakres prac."
+>
+
+<section class="mb-16 mt-12 md:mb-24 md:mt-16">
+  <div class="grid gap-8 md:gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+    {/* Główna lista realizacji */}
+    <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      {items.map((realizacja) => {
+        const data = realizacja.data;
+        const image = resolveContentImage(
+          data.tileImage ?? data.thumbnail ?? data.imageMain
+        );
+        
+        const tag = Array.isArray(data.category) ? data.category[0] : data.category;
+        
+        // Formułowanie daty z frontmattera (pole date)
+        const dateObj = data.date ? new Date(data.date) : null;
+        const formattedDate = dateObj ? dateObj.toLocaleDateString('pl-PL', { month: 'long', year: 'numeric' }) : null;
+        
+        const bgColor = data.background ?? data.tileBg;
+
+        return (
+          <article 
+            class="group relative overflow-hidden rounded-xl border border-black/6 transition-all duration-500 hover:border-orange-600/30"
+            style={bgColor ? `background-color: ${bgColor};` : undefined}
+          >
+            <div class="relative aspect-[12/10] overflow-hidden">
+              {image ? (
+                <Image
+                  class="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
+                  src={image}
+                  alt={data.title}
+                  widths={[400, 800]}
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="flex h-full items-center justify-center text-[10px] uppercase tracking-widest text-neutral-600">
+                  Brak podglądu projektu
+                </div>
+              )}
+            </div>
+
+            <div class="p-4 md:p-8 relative z-10">
+              <div class="flex justify-between items-center md:mb-4">
+                {tag && (
+                  <span class="text-orange-600 text-[10px] font-semibold uppercase tracking-[0.1em]">
+                    {tag}
+                  </span>
+                )}
+                
+                {/* Przywrócona data zamiast numeru pozycji */}
+                {formattedDate && (
+                  <span class="hidden md:block text-neutral-500 text-[10px] uppercase tracking-wider">
+                    {formattedDate}
+                  </span>
+                )}
+              </div>
+
+              <div class="flex justify-between items-end gap-4">
+                <div class="flex-1">
+                  <h2 class="text-xl lg:text-xl xl:text-2xl font-semibold tracking-tight leading-tight">
+                    {data.title}
+                  </h2>
+                </div>
+
+                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-neutral-200 text-white transition-all duration-300 group-hover:bg-orange-600 group-hover:border-orange-600 group-hover:rotate-45">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <a href={`/realizacje/${realizacja.slug}/`} class="absolute inset-0 z-20" aria-label={`Zobacz projekt: ${data.title}`}></a>
+          </article>
+        );
+      })}
+    </div>
+
+    <aside class="sticky top-34 self-start space-y-8">
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">
+          Rodzaj
+        </h3>
+        {categories.length ? (
+          <ul class="space-y-2">
+            {categories.map((category) => (
+              <li key={category.slug}>
+                <a
+                  href={`/realizacje/rodzaj/${category.slug}/`}
+                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700"
+                >
+                  {category.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-sm text-neutral-500">Brak kategorii</p>
+        )}
+      </div>
+      <!--
+      <div class="">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 border-l-2 border-orange-600 pl-4">
+          O projektach
+        </h3>
+        <p class="text-sm text-neutral-600 leading-relaxed">
+          W tej sekcji znajdziesz moje wybrane realizacje. Każdy projekt to indywidualne podejście i dbałość o detale.
+        </p>
+      </div>
+       -->
+    </aside>
+  </div>
+</section>
+</BaseLayout>

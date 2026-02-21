@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import settings from "../../content/ustawienia.json";
+
+const contact = {
+  name: "Mooneso",
+  title: "Kontakt",
+  lead: "Napisz albo zadzwoń i opowiedz o projekcie. Wrócę z odpowiedzią w 24-48h.",
+  email: "kontakt@mooneso.pl",
+  phone: "+48 788 660 190",
+  address: "05-660 Warka",
+  country: "PL",
+  hours: "Pn - Pt: 9.00-17.00",
+  mapUrl: "https://share.google/pFQamwfSEgmR65Dc1",
+  priceRange: "1000-10000 PLN",
+};
+
+const { site } = Astro;
+const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const contactUrl = baseUrl ? `${baseUrl}/kontakt/` : "/kontakt/";
+const imageUrl = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
+
+const addressParts = contact.address.split(",").map((part) => part.trim()).filter(Boolean);
+const streetAddress = addressParts[0] ?? contact.address;
+let postalCode = "";
+let addressLocality = "";
+if (addressParts[1]) {
+  const match = addressParts[1].match(/^(\d{2}-\d{3})\s*(.+)?$/);
+  if (match) {
+    postalCode = match[1];
+    addressLocality = match[2] ?? "";
+  } else {
+    addressLocality = addressParts[1];
+  }
+}
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
+>
+  <section
+    class="pb-16 pt-12 md:pb-16 md:pt-16 grid gap-4 lg:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12"
+    itemscope
+    itemtype="https://schema.org/ContactPage"
+  >
+    <meta itemprop="name" content="Kontakt" />
+    <div class="space-y-6" itemscope itemtype="https://schema.org/LocalBusiness" itemprop="mainEntity">
+      <meta itemprop="name" content={contact.name} />
+      <meta itemprop="url" content={contactUrl} />
+      <meta itemprop="email" content={contact.email} />
+      <meta itemprop="telephone" content={contact.phone} />
+      <meta itemprop="hasMap" content={contact.mapUrl} />
+      {imageUrl ? <meta itemprop="image" content={imageUrl} /> : null}
+      <meta itemprop="priceRange" content={contact.priceRange} />
+      <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+        <meta itemprop="contactType" content="customer support" />
+        <meta itemprop="email" content={contact.email} />
+        <meta itemprop="telephone" content={contact.phone} />
+        <meta itemprop="availableLanguage" content="pl" />
+      </div>
+      <div class="space-y-2 -mt-7">
+        <h2 class="max-w-xl font-semibold text-black text-2xl md:text-3xl mb-4">
+          Opisz jaki cel ma relizować strona, termin wykonania i budżet
+        </h2>
+        <p class="max-w-xl text-base text-[var(--muted)]">
+          Jeśli masz brief, linki do inspiracji albo obecnej strony,
+          prześlij je w wiadomości. Odezwę się z propozycją dalszych kroków, planem działań i wstępną wyceną.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.1em] text-[var(--accent)]">Email</p>
+          <a
+            class="mt-3 block md:text-base text-[var(--text)]"
+            href={`mailto:${contact.email}`}
+            title="Napisz email"
+            itemprop="email"
+          >
+            {contact.email}
+          </a>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.1em] text-[var(--accent)]">Telefon</p>
+          <a
+            class="mt-3 block md:text-base text-[var(--text)]"
+            href={`tel:${contact.phone.replace(/\s/g, "")}`}
+            title="Zadzwon"
+            itemprop="telephone"
+          >
+            {contact.phone}
+          </a>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.1em] text-[var(--accent)]">Lokalizacja</p>
+          <div
+            class="mt-3 text-base text-[var(--text)]"
+            itemprop="address"
+            itemscope
+            itemtype="https://schema.org/PostalAddress"
+          >
+            <span itemprop="streetAddress">{streetAddress}</span>
+            {postalCode ? <meta itemprop="postalCode" content={postalCode} /> : null}
+            {addressLocality ? <meta itemprop="addressLocality" content={addressLocality} /> : null}
+            {contact.country ? <meta itemprop="addressCountry" content={contact.country} /> : null}
+          </div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.1em] text-[var(--accent)]">Dostępność</p>
+          <p class="mt-3 text-base text-[var(--text)]" itemprop="openingHours">
+            {contact.hours}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-[var(--border)] bg-[#fbfbff] p-4 md:p-6 lg:sticky lg:top-8">
+      <form class="mt-6 grid gap-4" id="contactForm">
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-name">
+            &nbsp;&nbsp;&nbsp; Imię i nazwisko
+            <input
+              id="contact-name"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+              name="form-name"
+              type="text"
+              placeholder="Jan Kowalski"
+              required
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-email">
+            &nbsp;&nbsp;&nbsp; Email
+            <input
+              id="contact-email"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+              name="form-mail"
+              type="email"
+              placeholder="jan@firma.pl"
+              required
+            />
+          </label>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-phone">
+            &nbsp;&nbsp;&nbsp; Telefon
+            <input
+              id="contact-phone"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+              name="form-phone"
+              type="tel"
+              placeholder="+48 123 456 789"
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-company">
+            &nbsp;&nbsp;&nbsp; Firma 
+            <input
+              id="contact-company"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+              name="form-company"
+              type="text"
+              placeholder="Nazwa firmy"
+            />
+          </label>
+        </div>
+        <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-service">
+          &nbsp;&nbsp;&nbsp; Usługa
+          <input
+            id="contact-service"
+            class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+            name="form-service"
+            type="text"
+            placeholder="Strona internetowa"
+          />
+        </label>
+        <label class="grid gap-2 text-sm font-medium text-[var(--muted)]" for="contact-message">
+          &nbsp;&nbsp;&nbsp; Wiadomość
+          <textarea
+            id="contact-message"
+            class="w-full box-border min-h-[110px] rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-md text-[var(--muted)] focus:border-orange-600 focus:outline focus:outline-orange-600"
+            name="form-message"
+            placeholder="Napisz czego potrzebujesz"
+            required
+          ></textarea>
+        </label>
+        <label class="flex flex-row items-start text-sm font-medium text-[var(--muted)]" for="contact-check">
+          <input
+            id="contact-check"
+            class="w-auto mr-2 mt-1"
+            name="form-service"
+            type="checkbox"
+            required
+            checked
+          />
+          <span class="text-[var(--muted)]">
+            Akceptuję <a href="/polityka/" title="Polityka prywatności" class="text-[var(--accent)]"> politykę prywatności</a> i wyrażam zgodę na kontakt w celu przygotowania oferty lub odpowiedzi na moją wiadomość.
+          </span>
+        </label>
+        <button
+          class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95 cursor-pointer"
+          type="submit"
+        >
+          Wyślij wiadomość
+        </button>
+        <p id="contact-form-status" class="mt-3 text-md text-[var(--accent)]" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

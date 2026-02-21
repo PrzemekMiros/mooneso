@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preload" as="font" type="font/otf" href="/_astro/Haigrast._a290eVl.otf" crossorigin>
+    <link rel="preload" as="font" type="font/otf" href="/_astro/saonara.BmKUgSp0.otf" crossorigin>
+    <link rel="preload" as="font" type="font/ttf" href="/_astro/Lato-Regular.BwLIet1C.ttf" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/_astro/favicon.NJ9PyspR.svg">
+    <link rel="icon" type="image/png" href="/_astro/favicon.Cg538DyT.png">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Astro v5.16.12">
+    <meta name="robots" content="index">
+    
+    <title> Przydatne snippety do Woocommerce - Przemek Miros | Strony internetowe</title>
+    <meta name="description" content="Przydatne snippety do użycia we wtyczce na Wordpressa - Woocommerce">
+    <meta property="og:title" content=" Przydatne snippety do Woocommerce - Przemek Miros | Strony internetowe">
+    <meta property="og:description" content="Przydatne snippety do użycia we wtyczce na Wordpressa - Woocommerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://przemekmiros.pl/.netlify/images?url=_astro%2Fopengraph.1jk5YtXr.png&fm=png&w=1903&h=1075">
+    <meta property="og:url" content="https://przemekmiros.pl/artykuly/snippety-do-woocommerce/">
+    <link rel="canonical" href="https://przemekmiros.pl/artykuly/snippety-do-woocommerce/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content=" Przydatne snippety do Woocommerce - Przemek Miros | Strony internetowe">
+    <meta name="twitter:description" content="Przydatne snippety do użycia we wtyczce na Wordpressa - Woocommerce">
+    <meta name="twitter:image" content="https://przemekmiros.pl/.netlify/images?url=_astro%2Fopengraph.1jk5YtXr.png&fm=png&w=1903&h=1075">
+    <meta name="google-site-verification" content="_uLorccZIpY-NlRb036yMXgs2lvctMD5A_aSlU6HRa4">
+    
+<meta name="astro-view-transitions-enabled" content="true">
+<meta name="astro-view-transitions-fallback" content="animate">
+<script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script>
+    
+<meta name="astro-view-transitions-enabled" content="true">
+<meta name="astro-view-transitions-fallback" content="animate">
+
+    <style>.astro-loading-indicator {
+  pointer-events: none;
+  background-color: var(--accent);
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: transform 400ms ease-out, opacity 200ms 200ms ease-in;
+	transform: translate3d(0, 0, 0) scaleX(var(--progress, 0));
+  transform-origin: 0;
+}
+
+[dir="rtl"] .astro-loading-indicator {
+  transform-origin: 100% 0;
+}
+</style>
+
+<script>(function(){const className = "astro-loading-indicator";
+const animationDuration = 400;
+const threshold = 200;
+
+(() => {
+  let progress = 0.25
+  let opacity = 0
+  /** @type {number | undefined} */
+  let trickleInterval = undefined
+  /** @type {number | undefined} */
+  let thresholdTimeout = undefined;
+
+  const element = document.createElement("div")
+  element.classList.add(className)
+  element.ariaHidden = "true"
+
+  /** @param {typeof progress} _progress */
+  const setProgress = (_progress) => {
+    progress = _progress
+    element.style.setProperty('--progress', String(progress))
+  }
+
+  /** @param {typeof opacity} _opacity */
+  const setOpacity = (_opacity) => {
+    opacity = _opacity
+    element.style.setProperty('opacity', String(opacity))
+  }
+
+  setOpacity(opacity)
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.prepend(element)
+  })
+
+  document.addEventListener("astro:before-preparation", () => {
+    thresholdTimeout = setTimeout(() => {
+      setOpacity(1)
+      trickleInterval = window.setInterval(() => {
+        setProgress(progress + Math.random() * 0.03)
+      }, animationDuration)
+    }, threshold)
+  })
+
+  document.addEventListener("astro:before-swap", (ev) => {
+    if (!thresholdTimeout) {
+      return
+    }
+    window.clearTimeout(thresholdTimeout)
+
+    ev.newDocument.body.prepend(element)
+    window.clearInterval(trickleInterval)
+    trickleInterval = undefined
+
+    setProgress(1)
+    window.setTimeout(() => {
+      setOpacity(0)
+    }, animationDuration / 2)
+
+    window.setTimeout(() => {
+      setProgress(0.25)
+    }, animationDuration * 2)
+  })
+})()
+})();</script>
+    <style>
+      ::view-transition-old(root) {
+        animation: fade-out 160ms ease;
+      }
+      ::view-transition-new(root) {
+        animation: fade-in 160ms ease;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+    </style>
+  <link rel="stylesheet" href="/_astro/_slug_.CwEX5pu6.css"></head>
+  <body class="min-h-screen bg-[var(--bg)] font-sans text-[var(--text)]">
+    <main class="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-4 sm:px-10 lg:px-12">
+      <header class="fixed left-0 right-0 top-0 z-500 border-b border-white/15 bg-black/90 py-5 sm:pb-4 sm:pt-4 backdrop-blur-md" data-astro-cid-3ef6ksr2>
+    <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-10 md:px-10 xl:px-0" data-astro-cid-3ef6ksr2>
+        <nav class="flex items-center justify-between gap-4" data-astro-cid-3ef6ksr2>
+            <a href="/" class="text-xl font-bold tracking-tighter text-white no-underline" aria-label="Logo" data-astro-cid-3ef6ksr2>
+              <img src="/_astro/logo.B5XILTm-.png" class="w-38 mb-0.5" width="280" height="66" alt="Logo Przemek Miros" data-astro-cid-3ef6ksr2>
+            </a>
+
+            <div class="hidden items-center justify-center gap-8 text-sm font-medium md:flex" data-astro-cid-3ef6ksr2>
+                <a class="px-3 py-3 text-white/70 no-underline transition hover:text-white transition-colors hover:text-white" href="/produkty/" data-astro-cid-3ef6ksr2>
+                            Produkty
+                        </a><a class="px-3 py-3 text-white/70 no-underline transition hover:text-white transition-colors hover:text-white" href="/o-nas/" data-astro-cid-3ef6ksr2>
+                            O nas
+                        </a><a class="px-3 py-3 text-white/70 no-underline transition hover:text-white transition-colors hover:text-white" href="/faq/" data-astro-cid-3ef6ksr2>
+                            Faq
+                        </a><a class="px-3 py-3 text-white/70 no-underline transition hover:text-white transition-colors hover:text-white" href="/wspolpraca/" data-astro-cid-3ef6ksr2>
+                            Współpraca
+                        </a><a class="px-3 py-3 text-white/70 no-underline transition hover:text-white transition-colors hover:text-white" href="/kontakt/" data-astro-cid-3ef6ksr2>
+                            Kontakt
+                        </a>
+            </div>
+
+              <a href="/kontakt/" title="Wycena" class="hidden md:inline-flex group relative h-11 items-center justify-center rounded-md bg-[var(--accent)] px-6 font-medium text-neutral-200" data-astro-cid-3ef6ksr2><span data-astro-cid-3ef6ksr2>Koszyk</span><div class="relative ml-1 h-5 w-5 overflow-hidden" data-astro-cid-3ef6ksr2><div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4" data-astro-cid-3ef6ksr2><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" data-astro-cid-3ef6ksr2><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" data-astro-cid-3ef6ksr2></path></svg><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -translate-x-4" data-astro-cid-3ef6ksr2><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" data-astro-cid-3ef6ksr2></path></svg></div></div></a>
+
+            <button class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 md:hidden" type="button" data-mobile-toggle data-astro-cid-3ef6ksr2>
+                Menu
+            </button>
+        </nav>
+
+        <div class="fixed inset-x-0 top-0 z-[60] h-screen flex flex-col gap-6 overflow-hidden bg-[#0a0a0a] p-8 text-white transition-all duration-300 pointer-events-none opacity-0 md:hidden" id="mobile-menu" data-mobile-menu data-astro-cid-3ef6ksr2>
+            <div class="flex items-center justify-between" data-astro-cid-3ef6ksr2>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500" data-astro-cid-3ef6ksr2>Nawigacja</span>
+                <button class="text-[10px] font-bold uppercase tracking-widest text-orange-500" type="button" data-mobile-close data-astro-cid-3ef6ksr2>
+                    Zamknij
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-6 pt-12" data-astro-cid-3ef6ksr2>
+                <a class="text-xl font-semibold tracking-tight text-white no-underline" href="/produkty/" data-mobile-link data-astro-cid-3ef6ksr2>
+                            Produkty
+                        </a>
+						<div class="border border-b border-white/10" data-astro-cid-3ef6ksr2></div><a class="text-xl font-semibold tracking-tight text-white no-underline" href="/o-nas/" data-mobile-link data-astro-cid-3ef6ksr2>
+                            O nas
+                        </a>
+						<div class="border border-b border-white/10" data-astro-cid-3ef6ksr2></div><a class="text-xl font-semibold tracking-tight text-white no-underline" href="/faq/" data-mobile-link data-astro-cid-3ef6ksr2>
+                            Faq
+                        </a>
+						<div class="border border-b border-white/10" data-astro-cid-3ef6ksr2></div><a class="text-xl font-semibold tracking-tight text-white no-underline" href="/wspolpraca/" data-mobile-link data-astro-cid-3ef6ksr2>
+                            Współpraca
+                        </a>
+						<div class="border border-b border-white/10" data-astro-cid-3ef6ksr2></div><a class="text-xl font-semibold tracking-tight text-white no-underline" href="/kontakt/" data-mobile-link data-astro-cid-3ef6ksr2>
+                            Kontakt
+                        </a>
+						<div class="border border-b border-white/10" data-astro-cid-3ef6ksr2></div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+<script type="module">document.addEventListener("astro:page-load",()=>{const e=document.querySelector("[data-mobile-toggle]"),t=document.querySelector("[data-mobile-menu]"),n=document.querySelector("[data-mobile-close]");if(document.querySelectorAll("[data-mobile-link]"),e&&t){const o=l=>{t.classList.toggle("is-open",l),document.body.style.overflow=l?"hidden":""};e.addEventListener("click",()=>o(!0)),n?.addEventListener("click",()=>o(!1))}});</script>
+      
+      
+  <section class="relative pt-24 pb-0 md:pt-34 md:pb-8">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-50"></div>
+        
+  <div class="grid gap-4 md:gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+  <div></div>
+  <div>
+    <div class="relative space-y-4 mx-auto">
+        <div class="text-[8px] md:text-[10px] uppercase tracking-[0.1em] text-gray-400 mb-3 md:mb-6 font-semibold">
+
+          <svg class="inline-block mb-1.5" width="14" height="14" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4151_5)">
+<path d="M21 5.6875L7 16.1875V37.1875H15.75V24.9375H26.25V37.1875H35V16.1875L21 5.6875Z" fill="#F4583C"></path>
+</g>
+<defs>
+<clipPath id="clip0_4151_5">
+<rect width="42" height="42" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
+
+        <span class="text-gray"> Artykuły</span>
+        <span class="text-[var(--accent)]"> • </span>
+        <span class="text-gray"> Przydatne snippety do Woocommerce</span>
+       </div>
+    <h1 class="text-2xl sm:text-3xl/4 md:text-4xl lg:text-5xl font-semibold tracking-tight text-black">
+      Przydatne snippety do Woocommerce
+    </h1>
+    <div class="flex flex-wrap gap-x-8 gap-y-2 pt-4 mt-4 md:pt-8 md:mt-8 border-t border-black/20 font-semibold text-[8px] md:text-[10px] tracking-[0.15em] uppercase">
+    <div class="text-gray-400">
+        <svg class="inline-block mb-1" width="14" height="14" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4151_8)">
+<path d="M33.6 9.625H21L17.85 5.6875H8.4C6.6675 5.6875 5.26575 7.45937 5.26575 9.625L5.25 33.25C5.25 35.4156 6.6675 37.1875 8.4 37.1875H33.6C35.3325 37.1875 36.75 35.4156 36.75 33.25V13.5625C36.75 11.3969 35.3325 9.625 33.6 9.625ZM33.6 33.25H8.4V13.5625H33.6V33.25Z" fill="#F4583C"></path>
+</g>
+<defs>
+<clipPath id="clip0_4151_8">
+<rect width="42" height="42" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
+
+      <span class="text-gray">Wordpress</span>
+      </div>
+    <div class="text-gray-400 hidden md:block">
+<svg class="inline-block mb-1" width="14" height="14" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4151_2)">
+<path d="M15.75 19.9375H12.25V23.4375H15.75V19.9375ZM22.75 19.9375H19.25V23.4375H22.75V19.9375ZM29.75 19.9375H26.25V23.4375H29.75V19.9375ZM33.25 7.6875H31.5V4.1875H28V7.6875H14V4.1875H10.5V7.6875H8.75C6.8075 7.6875 5.2675 9.2625 5.2675 11.1875L5.25 35.6875C5.25 37.6125 6.8075 39.1875 8.75 39.1875H33.25C35.175 39.1875 36.75 37.6125 36.75 35.6875V11.1875C36.75 9.2625 35.175 7.6875 33.25 7.6875ZM33.25 35.6875H8.75V16.4375H33.25V35.6875Z" fill="#F4583C"></path>
+</g>
+<defs>
+<clipPath id="clip0_4151_2">
+<rect width="42" height="42" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
+
+
+       <span class="text-gray">23.05.2023</span>
+      </div>
+
+    <div class="text-gray-400">
+        <svg class="inline-block mb-1" width="14" height="14" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4154_2)">
+<path d="M19.25 29.75C19.25 30.7125 20.0375 31.5 21 31.5C21.9625 31.5 22.75 30.7125 22.75 29.75C22.75 28.7875 21.9625 28 21 28C20.0375 28 19.25 28.7875 19.25 29.75ZM19.25 5.25V12.25H22.75V8.89C28.6825 9.7475 33.25 14.8225 33.25 21C33.25 27.7725 27.7725 33.25 21 33.25C14.2275 33.25 8.75 27.7725 8.75 21C8.75 18.06 9.7825 15.365 11.515 13.265L21 22.75L23.4675 20.2825L11.5675 8.3825V8.4175C7.735 11.2875 5.25 15.8375 5.25 21C5.25 29.6975 12.285 36.75 21 36.75C29.6975 36.75 36.75 29.6975 36.75 21C36.75 12.3025 29.6975 5.25 21 5.25H19.25ZM31.5 21C31.5 20.0375 30.7125 19.25 29.75 19.25C28.7875 19.25 28 20.0375 28 21C28 21.9625 28.7875 22.75 29.75 22.75C30.7125 22.75 31.5 21.9625 31.5 21ZM10.5 21C10.5 21.9625 11.2875 22.75 12.25 22.75C13.2125 22.75 14 21.9625 14 21C14 20.0375 13.2125 19.25 12.25 19.25C11.2875 19.25 10.5 20.0375 10.5 21Z" fill="#F4583C"></path>
+</g>
+<defs>
+<clipPath id="clip0_4154_2">
+<rect width="42" height="42" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
+5 minut czytania
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <div></div>
+</div>
+
+
+</section>
+  <article class="mb-18 pt-10 md:pt-18 z-50" itemscope itemtype="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="https://przemekmiros.pl/artykuly/snippety-do-woocommerce/">
+    <meta itemprop="url" content="https://przemekmiros.pl/artykuly/snippety-do-woocommerce/">
+    <meta itemprop="headline" content="Przydatne snippety do Woocommerce">
+    <meta itemprop="description" content="Przydatne snippety do użycia we wtyczce na Wordpressa - Woocommerce">
+    <meta itemprop="datePublished" content="2023-05-23T11:53:45.446Z">
+    <meta itemprop="dateModified" content="2023-05-23T11:53:45.446Z">
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Przemek Miros">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Przemek Miros | Strony internetowe">
+      <meta itemprop="logo" content="https://przemekmiros.pl/assets/images/global/logo.png">
+    </div>
+    <div class="grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+      <aside class="hidden lg:block">
+        <div class="sticky top-38 space-y-4">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">Spis treści</h3>
+          <ol class="space-y-2.5 text-sm text-[var(--muted)]" data-toc>
+              <li>
+                    <a class="transition-colors" href="#strona-sklepu" data-toc-link data-toc-target="strona-sklepu">
+                      Strona sklepu
+                    </a>
+                  </li><li>
+                    <a class="transition-colors" href="#kategorie-i-produkty" data-toc-link data-toc-target="kategorie-i-produkty">
+                      Kategorie i produkty
+                    </a>
+                  </li><li>
+                    <a class="transition-colors" href="#kasa-i-zamówienie" data-toc-link data-toc-target="kasa-i-zamówienie">
+                      Kasa i zamówienie
+                    </a>
+                  </li>
+            </ol>
+        </div>
+      </aside>
+
+      <div class="min-w-0 space-y-12">
+        <header class="mb-8 md:mb-12">
+          <div class="mx-auto max-w-3xl space-y-12">
+            <div class="space-y-4 text-sm text-[var(--muted)]">
+              
+              
+              
+            </div>
+          </div>
+          
+<img src="/.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=1392&#38;h=730" srcset="/.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=480&#38;h=252 480w, /.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=768&#38;h=403 768w, /.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=960&#38;h=503 960w, /.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=1100&#38;h=577 1100w, /.netlify/images?url=_astro%2Fblog-woo.CMpeYGXH.png&#38;w=1392&#38;h=730 1392w" alt="Przydatne snippety do Woocommerce" sizes="(max-width: 1320px) 100vw, 1320px" loading="lazy" placeholder="blur" itemprop="image" decoding="async" fetchpriority="auto" width="1392" height="730" class="aspect-[16/9] rounded-xl border border-[var(--border)] object-cover">
+        </header>
+
+        
+        <section id="article-content" class="mx-auto min-w-0 max-w-2xl space-y-6 text-[15px] leading-relaxed text-[var(--text)] sm:text-[16px] sm:leading-relaxed
+            [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>a]:font-medium hover:[&>a]:text-[var(--accent)]
+            [&>blockquote]:bg-[#f9fafb] [&>blockquote]:p-[2em] [&>blockquote]:not-italic [&>blockquote]:text-[0.9em] [&>blockquote]:text-[var(--muted)] [&>blockquote]:border-l-[3px] [&>blockquote]:border-l-[var(--accent)]
+            [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:tracking-tight [&>h2]:text-[var(--heading)] [&>h2]:scroll-mt-[144px]
+            [&>h3]:mt-7 [&>h3]:mb-3 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:text-[var(--heading)]
+            [&>hr]:my-8 [&>hr]:border-[var(--border)]
+            [&>p]:mb-5 [&>p]:last:mb-0">
+            <p><strong>Wsparcie dla Woocommerce w customowym motywie Wp</strong></p>
+<p>Bardzo ważny snippet, którego możesz użyć do dodania obsługi WooCommerce do dowolnego motywu WordPress:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function mytheme_add_woocommerce_support() {</span></span>
+<span class="line"><span>	add_theme_support( 'woocommerce' );</span></span>
+<span class="line"><span>	add_theme_support( 'wc-product-gallery-zoom' );</span></span>
+<span class="line"><span>	add_theme_support( 'wc-product-gallery-lightbox' );</span></span>
+<span class="line"><span>	add_theme_support( 'wc-product-gallery-slider' );</span></span>
+<span class="line"><span>} </span></span>
+<span class="line"><span>add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );</span></span></code></pre>
+<p><strong>Dodawanie niestandardowej waluty do Woocommerce</strong></p>
+<p>Skopiuj i wklej ten kod do pliku functions.php motywu i zamień kod i symbol waluty na własny. Po zapisaniu zmian powinien być dostępny w ustawieniach WooCommerce.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_currencies’, ‘add_my_currency’ ); </span></span>
+<span class="line"><span>function add_my_currency( $currencies ) { </span></span>
+<span class="line"><span> $currencies[‘ABC’] = __( ‘Currency name’, ‘woocommerce’ ); </span></span>
+<span class="line"><span> return $currencies;</span></span>
+<span class="line"><span>}add_filter(‘woocommerce_currency_symbol’, ‘add_my_currency_symbol’, 10, 2); </span></span>
+<span class="line"><span>function add_my_currency_symbol( $currency_symbol, $currency ) </span></span>
+<span class="line"><span>{ </span></span>
+<span class="line"><span> switch( $currency ) { </span></span>
+<span class="line"><span> case ‘ABC’: </span></span>
+<span class="line"><span> $currency_symbol = ‘$’; </span></span>
+<span class="line"><span> break; </span></span>
+<span class="line"><span> } </span></span>
+<span class="line"><span> return $currency_symbol;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Usuń meta dane produktu na stronie pojedynczego produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>remove_action( ‘woocommerce_single_product_summary’, ‘woocommerce_template_single_meta’, 40 );</span></span></code></pre>
+<p><strong>Usuń miejsca dziesiętne zerowe w cenie produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_price_trim_zeros’, ‘__return_true’ );</span></span></code></pre>
+<p><strong>Ukryj ilość na stronie koszyka</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function remove_quantity_column( $return, $product ) {</span></span>
+<span class="line"><span> if ( is_cart() ) return true;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_filter( 'woocommerce_is_sold_individually', 'remove_quantity_column', 10, 2 );</span></span></code></pre>
+<p><strong>Ogranicz długość notatki zamówienia woocommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields', 'limit_order_note_length' );</span></span>
+<span class="line"><span>function limit_order_note_length( $fields ) {</span></span>
+<span class="line"><span> $fields['order']['order_comments']['maxlength'] = 200;</span></span>
+<span class="line"><span> return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Pokaż niestandardowe pola płatności według identyfikatora produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( 'woocommerce_checkout_fields', 'hqhowdotcom_cutom_checkout_field_conditional_logic' );function hqhowdotcom_cutom_checkout_field_conditional_logic( $fields ) {foreach( WC()->cart->get_cart() as $cart_item ){</span></span>
+<span class="line"><span>     $product_id = $cart_item['product_id'];//change 2020 to your product id</span></span>
+<span class="line"><span>   if( $product_id == 2020 ) {</span></span>
+<span class="line"><span>    $fields['billing']['billing_field_' . $product_id] = array(</span></span>
+<span class="line"><span>     'label'     => __('Custom Field on Checkout for ' . $product_id, 'woocommerce'),</span></span>
+<span class="line"><span>     'placeholder'   => _x('Custom Field on Checkout for ' . $product_id, 'placeholder', 'woocommerce'),</span></span>
+<span class="line"><span>     'required'  => false,</span></span>
+<span class="line"><span>     'class'     => array('form-row-wide'),</span></span>
+<span class="line"><span>     'clear'     => true</span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span>   }}// Return checkout fields.</span></span>
+<span class="line"><span> return $fields;}</span></span></code></pre>
+<p><strong>Ukryj wszystkie metody wysyłki oprócz bezpłatnej wysyłki</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function only_show_free_shipping_when_available( $rates, $package ) {</span></span>
+<span class="line"><span> $new_rates = array();</span></span>
+<span class="line"><span> foreach ( $rates as $rate_id => $rate ) {</span></span>
+<span class="line"><span>  // Only modify rates if free_shipping is present.</span></span>
+<span class="line"><span>  if ( 'free_shipping' === $rate->method_id ) {</span></span>
+<span class="line"><span>   $new_rates[ $rate_id ] = $rate;</span></span>
+<span class="line"><span>   break;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span> }if ( ! empty( $new_rates ) ) {</span></span>
+<span class="line"><span>  //Save local pickup if it's present.</span></span>
+<span class="line"><span>  foreach ( $rates as $rate_id => $rate ) {</span></span>
+<span class="line"><span>   if ('local_pickup' === $rate->method_id ) {</span></span>
+<span class="line"><span>    $new_rates[ $rate_id ] = $rate;</span></span>
+<span class="line"><span>    break;</span></span>
+<span class="line"><span>   }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  return $new_rates;</span></span>
+<span class="line"><span> }return $rates;</span></span>
+<span class="line"><span>}add_filter( 'woocommerce_package_rates', 'only_show_free_shipping_when_available', 10, 2 );</span></span></code></pre>
+<p><strong>Usuń kartę produktu na stronie pojedynczego produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_product_tabs’, ‘remove_product_tabs’, 98 );function remove_product_tabs( $tabs ) {</span></span>
+<span class="line"><span> // Remove the additional information tab</span></span>
+<span class="line"><span> unset( $tabs[‘additional_information’] ); </span></span>
+<span class="line"><span> return $tabs;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodaj nowy kraj do listy krajów</strong></p>
+<p>Żeby dodać nowy kraj do listy krajów, użyj tego fragmentu kodu w pliku function.php folderu motywu:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function woo_add_my_country( $country ) {</span></span>
+<span class="line"><span> $country[“AEDUB”] = ‘Dubai’;</span></span>
+<span class="line"><span> return $country;</span></span>
+<span class="line"><span>}add_filter( ‘woocommerce_countries’, ‘woo_add_my_country’, 10, 1 );</span></span></code></pre>
+<h2 id="strona-sklepu">Strona sklepu</h2>
+<p><strong>Usuń okruszki</strong></p>
+<p>Oto snippet, który pomoże Ci usunąć okruszki z Woocommerce:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( ‘init’, ‘remove_wc_breadcrumbs’ );</span></span>
+<span class="line"><span>function remove_wc_breadcrumbs() {</span></span>
+<span class="line"><span>   remove_action( ‘woocommerce_before_main_content’, ‘woocommerce_breadcrumb’, 20, 0 );</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zamień tytuł strony sklepu</strong></p>
+<p>Za pomocą tego bloku kodu możesz szybko zmienić tytuł swojego sklepu. Po prostu zastąp zwracaną wartość preferowaną nazwą.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_page_title’, ‘shop_page_title’);</span></span>
+<span class="line"><span>function shop_page_title($title ) {</span></span>
+<span class="line"><span> if(is_shop()) {</span></span>
+<span class="line"><span> return “My new title”;</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span> return $title;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Przekieruj do strony kasy po dodaniu produktu do koszyka</strong></p>
+<p>Aby poprawić konwersje sprzedażowe, możesz automatycznie przekierować do strony kasy po dodaniu produktu do koszyka za pomocą następującego kodu:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( ‘add_to_cart_redirect’, ‘add_to_cart_checkout_redirect’, 16 );</span></span>
+<span class="line"><span>function add_to_cart_checkout_redirect() {</span></span>
+<span class="line"><span>    global $woocommerce;</span></span>
+<span class="line"><span>    $checkout_url = $woocommerce->cart->get_checkout_url();</span></span>
+<span class="line"><span>    return $checkout_url;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Usuń kategorie produktów ze strony sklepu</strong></p>
+<p>Jeśli chcesz pozbyć się określonej kategorii produktów ze strony sklepu, ten kod jest bardzo przydatny. Kod ukryje wszystkie produkty z wymienionych kategorii.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( ‘pre_get_posts’, ‘remove_categories_shop’ );function remove_categories_shop( $q ) {if ( ! $q->is_main_query() ) return;if ( ! $q->is_post_type_archive() ) return;if ( ! is_admin() &#x26;&#x26; is_shop() &#x26;&#x26; ! is_user_logged_in() ) {$q->set( ‘tax_query’, array(array(‘taxonomy’ => ‘product_cat’,‘field’ => ‘slug’,// Don’t display products in these categories on the shop page</span></span>
+<span class="line"><span> ‘terms’ => array( ‘color’, ‘flavor’, ‘spices’, ‘vanilla’ ),‘operator’ => ‘NOT IN’)));</span></span>
+<span class="line"><span> }remove_action( ‘pre_get_posts’, ‘remove_categories_shop’ );}</span></span></code></pre>
+<p><strong>Usuwanie nazwy firmy z kasy WooCommerce</strong></p>
+<p>Aby usunąć pole nazwy firmy z kasy WooCommerce, wystarczy użyć hook’a <strong>woocommerce_checkout_fields</strong>, a następnie zastosować filtr, aby usunąć ustawienie pola [billing] [billing_company] ze zwróconej tablicy.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_checkout_fields’ , ‘remove_company_name’ ); function remove_company_name( $fields ) { </span></span>
+<span class="line"><span>   unset($fields[‘billing’][‘billing_company’]); </span></span>
+<span class="line"><span>   return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Uwaga: Tą samą metodą można również anulować ustawienia innych pól. Oto przykład:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_checkout_fields’ , ‘custom_remove_woo_checkout_fields’ );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function custom_remove_woo_checkout_fields( $fields ) {// remove billing fields</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_first_name’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_last_name’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_company’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_address_1’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_address_2’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_city’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_postcode’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_country’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_state’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_phone’]);</span></span>
+<span class="line"><span> unset($fields[‘billing’][‘billing_email’]);</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> // remove shipping fields </span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_first_name’]); </span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_last_name’]); </span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_company’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_address_1’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_address_2’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_city’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_postcode’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_country’]);</span></span>
+<span class="line"><span> unset($fields[‘shipping’][‘shipping_state’]);</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> // remove order comment fields</span></span>
+<span class="line"><span> unset($fields[‘order’][‘order_comments’]);</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Usuwanie pole województwo w kasie WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function remove_state_field( $fields ) {</span></span>
+<span class="line"><span> unset( $fields[‘state’] );</span></span>
+<span class="line"><span> return $fields;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_filter( ‘woocommerce_default_address_fields’, ‘remove_state_field’ );</span></span></code></pre>
+<p><strong>Szybko przetłumacz dowolny ciąg znaków</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter('gettext',  'translate_text');</span></span>
+<span class="line"><span>add_filter('ngettext',  'translate_text');</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function translate_text($translated) {</span></span>
+<span class="line"><span>     $translated = str_ireplace('Choose and option',  'Select',  $translated);</span></span>
+<span class="line"><span>     return $translated;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Wyklucz kategorię z widżetu kategorii WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_product_categories_widget_args', 'woo_product_cat_widget_args' );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function woo_product_cat_widget_args( $cat_args ) {</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	$cat_args['exclude'] = array('16');</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	return $cat_args;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zamień „Brak w magazynie” na „sprzedane”</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter('woocommerce_get_availability', 'availability_filter_func');</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function availability_filter_func($availability)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>	$availability['availability'] = str_ireplace('Out of stock', 'Sold', $availability['availability']);</span></span>
+<span class="line"><span>	return $availability;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Wyświetlaj „produkt już w koszyku” zamiast przycisku „dodaj do koszyka”</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Change the add to cart text on single product pages</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function woo_custom_cart_button_text() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	global $woocommerce;</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	foreach($woocommerce->cart->get_cart() as $cart_item_key => $values ) {</span></span>
+<span class="line"><span>		$_product = $values['data'];</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>		if( get_the_ID() == $_product->id ) {</span></span>
+<span class="line"><span>			return __('Already in cart - Add Again?', 'woocommerce');</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	return __('Add to cart', 'woocommerce');</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Change the add to cart text on product archives</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>add_filter( 'add_to_cart_text', 'woo_archive_custom_cart_button_text' );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function woo_archive_custom_cart_button_text() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	global $woocommerce;</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	foreach($woocommerce->cart->get_cart() as $cart_item_key => $values ) {</span></span>
+<span class="line"><span>		$_product = $values['data'];</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>		if( get_the_ID() == $_product->id ) {</span></span>
+<span class="line"><span>			return __('Already in cart', 'woocommerce');</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>	return __('Add to cart', 'woocommerce');</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<h2 id="kategorie-i-produkty">Kategorie i produkty</h2>
+<p><strong>Ukryj liczbę produktów w widoku kategorii</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function woo_remove_category_products_count() {</span></span>
+<span class="line"><span>	return;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Ustaw wymagane pola płatności na koncie</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields', 'woo_filter_account_checkout_fields' );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function woo_filter_account_checkout_fields( $fields ) {</span></span>
+<span class="line"><span>	$fields['account']['account_username']['required'] = true;</span></span>
+<span class="line"><span>	$fields['account']['account_password']['required'] = true;</span></span>
+<span class="line"><span>	$fields['account']['account_password-2']['required'] = true;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zmień nazwę karty produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_product_tabs', 'woo_rename_tab', 98);</span></span>
+<span class="line"><span>function woo_rename_tab($tabs) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> $tabs['description']['title'] = 'More info';</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> return $tabs;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodaj niestandardowe pole do odmiany produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>//Display Fields</span></span>
+<span class="line"><span>add_action( 'woocommerce_product_after_variable_attributes', 'variable_fields', 10, 2 );</span></span>
+<span class="line"><span>//JS to add fields for new variations</span></span>
+<span class="line"><span>add_action( 'woocommerce_product_after_variable_attributes_js', 'variable_fields_js' );</span></span>
+<span class="line"><span>//Save variation fields</span></span>
+<span class="line"><span>add_action( 'woocommerce_process_product_meta_variable', 'variable_fields_process', 10, 1 );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function variable_fields( $loop, $variation_data ) { ?>	</span></span>
+<span class="line"><span>	&#x3C;tr></span></span>
+<span class="line"><span>		&#x3C;td></span></span>
+<span class="line"><span>			&#x3C;div></span></span>
+<span class="line"><span>					&#x3C;label>&#x3C;/label></span></span>
+<span class="line"><span>					&#x3C;input type="text" size="5" name="my_custom_field[]" value=""/></span></span>
+<span class="line"><span>			&#x3C;/div></span></span>
+<span class="line"><span>		&#x3C;/td></span></span>
+<span class="line"><span>	&#x3C;/tr></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;tr></span></span>
+<span class="line"><span>		&#x3C;td></span></span>
+<span class="line"><span>			&#x3C;div></span></span>
+<span class="line"><span>					&#x3C;label>&#x3C;/label></span></span>
+<span class="line"><span>					</span></span>
+<span class="line"><span>			&#x3C;/div></span></span>
+<span class="line"><span>		&#x3C;/td></span></span>
+<span class="line"><span>	&#x3C;/tr></span></span>
+<span class="line"><span>&#x3C;?php }</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function variable_fields_process( $post_id ) {</span></span>
+<span class="line"><span>	if (isset( $_POST['variable_sku'] ) ) :</span></span>
+<span class="line"><span>		$variable_sku = $_POST['variable_sku'];</span></span>
+<span class="line"><span>		$variable_post_id = $_POST['variable_post_id'];</span></span>
+<span class="line"><span>		$variable_custom_field = $_POST['my_custom_field'];</span></span>
+<span class="line"><span>		for ( $i = 0; $i &#x3C; sizeof( $variable_sku ); $i++ ) :</span></span>
+<span class="line"><span>			$variation_id = (int) $variable_post_id[$i];</span></span>
+<span class="line"><span>			if ( isset( $variable_custom_field[$i] ) ) {</span></span>
+<span class="line"><span>				update_post_meta( $variation_id, '_my_custom_field', stripslashes( $variable_custom_field[$i] ) );</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		endfor;</span></span>
+<span class="line"><span>	endif;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Lista kategorii produktów WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$args = array(</span></span>
+<span class="line"><span>    'number'     => $number,</span></span>
+<span class="line"><span>    'orderby'    => $orderby,</span></span>
+<span class="line"><span>    'order'      => $order,</span></span>
+<span class="line"><span>    'hide_empty' => $hide_empty,</span></span>
+<span class="line"><span>    'include'    => $ids</span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>$product_categories = get_terms( 'product_cat', $args );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>$count = count($product_categories);</span></span>
+<span class="line"><span> if ( $count > 0 ){</span></span>
+<span class="line"><span>     echo "&#x3C;ul>";</span></span>
+<span class="line"><span>     foreach ( $product_categories as $product_category ) {</span></span>
+<span class="line"><span>       echo '&#x3C;li>&#x3C;a href="' . get_term_link( $product_category ) . '">' . $product_category->name . '&#x3C;/li>';</span></span>
+<span class="line"><span>        </span></span>
+<span class="line"><span>     }</span></span>
+<span class="line"><span>     echo "&#x3C;/ul>";</span></span>
+<span class="line"><span> }</span></span></code></pre>
+<p><strong>Zmień nadawcę w email Woocommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function woo_custom_wp_mail_from_name() {</span></span>
+<span class="line"><span>        global $woocommerce;</span></span>
+<span class="line"><span>        return html_entity_decode( get_option( 'woocommerce_email_from_name' ) );</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_filter( 'wp_mail_from_name', 'woo_custom_wp_mail_from_name', 99 );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function woo_custom_wp_mail_from() {</span></span>
+<span class="line"><span>        global $woocommerce;</span></span>
+<span class="line"><span>        return html_entity_decode( get_option( 'woocommerce_email_from' ) );</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_filter( 'wp_mail_from_name', 'woo_custom_wp_mail_from_name', 99 );</span></span></code></pre>
+<p><strong>Zwróć identyfikatory polecanych produktów</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function woo_get_featured_product_ids() {</span></span>
+<span class="line"><span>	// Load from cache</span></span>
+<span class="line"><span>	$featured_product_ids = get_transient( 'wc_featured_products' );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	// Valid cache found</span></span>
+<span class="line"><span>	if ( false !== $featured_product_ids )</span></span>
+<span class="line"><span>		return $featured_product_ids;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	$featured = get_posts( array(</span></span>
+<span class="line"><span>		'post_type'      => array( 'product', 'product_variation' ),</span></span>
+<span class="line"><span>		'posts_per_page' => -1,</span></span>
+<span class="line"><span>		'post_status'    => 'publish',</span></span>
+<span class="line"><span>		'meta_query'     => array(</span></span>
+<span class="line"><span>			array(</span></span>
+<span class="line"><span>				'key' 		=> '_visibility',</span></span>
+<span class="line"><span>				'value' 	=> array('catalog', 'visible'),</span></span>
+<span class="line"><span>				'compare' 	=> 'IN'</span></span>
+<span class="line"><span>			),</span></span>
+<span class="line"><span>			array(</span></span>
+<span class="line"><span>				'key' 	=> '_featured',</span></span>
+<span class="line"><span>				'value' => 'yes'</span></span>
+<span class="line"><span>			)</span></span>
+<span class="line"><span>		),</span></span>
+<span class="line"><span>		'fields' => 'id=>parent'</span></span>
+<span class="line"><span>	) );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	$product_ids = array_keys( $featured );</span></span>
+<span class="line"><span>	$parent_ids  = array_values( $featured );</span></span>
+<span class="line"><span>	$featured_product_ids = array_unique( array_merge( $product_ids, $parent_ids ) );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	set_transient( 'wc_featured_products', $featured_product_ids );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return $featured_product_ids;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Ustaw minimalną kwotę zamówienia</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( 'woocommerce_checkout_process', 'wc_minimum_order_amount' );</span></span>
+<span class="line"><span>function wc_minimum_order_amount() {</span></span>
+<span class="line"><span>	global $woocommerce;</span></span>
+<span class="line"><span>	$minimum = 50;</span></span>
+<span class="line"><span>	if ( $woocommerce->cart->get_cart_total(); &#x3C; $minimum ) {</span></span>
+<span class="line"><span>           $woocommerce->add_error( sprintf( 'You must have an order with a minimum of %s to place your order.' , $minimum ) );</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zamów według ceny, daty lub tytułu na stronie sklepu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function custom_default_catalog_orderby() {</span></span>
+<span class="line"><span>     return 'date'; // Can also use title and price</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodaj odbiorcę wiadomości e-mail po zakończeniu zamówienia</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function woo_extra_email_recipient($recipient, $object) {</span></span>
+<span class="line"><span>    $recipient = $recipient . ', your@email.com';</span></span>
+<span class="line"><span>    return $recipient;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_filter( 'woocommerce_email_recipient_customer_completed_order', 'woo_extra_email_recipient', 10, 2);</span></span></code></pre>
+<p><strong>Ustaw numer telefonu jako niewymagany</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_billing_fields', 'wc_npr_filter_phone', 10, 1 );</span></span>
+<span class="line"><span>function wc_npr_filter_phone( $address_fields ) {</span></span>
+<span class="line"><span> $address_fields['billing_phone']['required'] = false;</span></span>
+<span class="line"><span> return $address_fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodawanie niestandardowych pól do wiadomości e-mail</strong></p>
+<p>Aby użyć tego kodu, wykonaj następujące kroki:</p>
+<ol>
+<li>Dodaj ten fragment kodu do pliku functions.php motywu</li>
+<li>Zmień nazwy kluczy meta we fragmencie kodu</li>
+<li>Utwórz niestandardowe pole w poście zamówienia — np. klucz = wartość „Kod śledzenia” = abcdefg</li>
+<li>Podczas następnej aktualizacji statusu lub podczas innego wydarzenia, które wysyła e-mail do użytkownika, zobaczy to pole w swoim e-mailu</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter(‘woocommerce_email_order_meta_keys’, ‘my_custom_order_meta_keys’);function my_custom_order_meta_keys( $keys ) {</span></span>
+<span class="line"><span> $keys[] = ‘Tracking Code’; // This will look for a custom field called ‘Tracking Code’ and add it to emails</span></span>
+<span class="line"><span> return $keys;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodawanie niestandardowego pola do strony kasy</strong></p>
+<p>Dodajmy nowe pole do kasy, po uwagach do zamówienia, podłączając się do następujących elementów:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( 'woocommerce_after_order_notes', 'my_custom_checkout_field' );function my_custom_checkout_field( $checkout ) {echo '&#x3C;div id="my_custom_checkout_field">&#x3C;h2>' . __('My Field') . '&#x3C;/h2>';woocommerce_form_field( 'my_field_name', array(</span></span>
+<span class="line"><span>        'type'          => 'text',</span></span>
+<span class="line"><span>        'class'         => array('my-field-class form-row-wide'),</span></span>
+<span class="line"><span>        'label'         => __('Fill in this field'),</span></span>
+<span class="line"><span>        'placeholder'   => __('Enter something'),</span></span>
+<span class="line"><span>        ), $checkout->get_value( 'my_field_name' ));echo '&#x3C;/div>';}</span></span></code></pre>
+<p>Następnie musimy sprawdzić poprawność pola po wysłaniu formularza kasy. W tym przykładzie pole jest wymagane, a nie opcjonalne:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');function my_custom_checkout_field_process() {</span></span>
+<span class="line"><span>    // Check if set, if its not set add an error.</span></span>
+<span class="line"><span>    if ( ! $_POST['my_field_name'] )</span></span>
+<span class="line"><span>        wc_add_notice( __( 'Please enter something into this new shiny field.' ), 'error' );</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Na koniec zapiszmy nowe pole, aby zmienić niestandardowe pola za pomocą następującego kodu:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( 'woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_update_order_meta' );function my_custom_checkout_field_update_order_meta( $order_id ) {</span></span>
+<span class="line"><span>    if ( ! empty( $_POST['my_field_name'] ) ) {</span></span>
+<span class="line"><span>        update_post_meta( $order_id, 'My Field', sanitize_text_field( $_POST['my_field_name'] ) );</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<h2 id="kasa-i-zamówienie">Kasa i zamówienie</h2>
+<p><strong>Dodaj treść pod przyciskiem „Złóż zamówienie” w kasie WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action( 'woocommerce_review_order_after_submit', 'bbloomer_privacy_message_below_checkout_button' );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function bbloomer_privacy_message_below_checkout_button() {</span></span>
+<span class="line"><span>   echo '&#x3C;p>&#x3C;small>Some Text Here&#x3C;/small>&#x3C;/p>';</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Dodaj tekst przed i po Dodaj do koszyka</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Before Add to Cart Button: Can be done easily with woocommerce_before_add_to_cart_button hook, example:add_action( ‘woocommerce_before_add_to_cart_button’, ‘before_add_to_cart_btn’ );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function before_add_to_cart_btn(){</span></span>
+<span class="line"><span>   echo ‘Some custom text here’;</span></span>
+<span class="line"><span>}// After Add to Cart Button: If you are going to add some custom text after “Add to Cart” button, woocommerce_after_add_to_cart_button hook should help you. Example of usage this hookadd_action( ‘woocommerce_after_add_to_cart_button’, ‘after_add_to_cart_btn’ );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function after_add_to_cart_btn(){</span></span>
+<span class="line"><span>    echo ‘Some custom text here’;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zmień kolejność pól kasy w WooCommerce</strong></p>
+<p>Pierwszą rzeczą, o której musisz pamiętać, jest to, że pola są podzielone na grupy, a właściwie są 4 grupy:</p>
+<ul>
+<li>billing — adres rozliczeniowy</li>
+<li>wysyłka — Adres wysyłki</li>
+<li>konto — Logowanie do konta</li>
+<li>zamów — Informacje dodatkowe</li>
+</ul>
+<p>Każda z tych grup zawiera pola, myślę, że wiesz które. I możesz bardzo łatwo zmienić ich kolejność za pomocą specjalnego parametru priorytetu.</p>
+<p>Przykład — chciałbym, aby pole e-mail wyświetlało się jako pierwsze, mogę to zrobić za pomocą tych kilku linijek kodu:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( ‘woocommerce_checkout_fields’, ‘email_first’ );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function email_first( $checkout_fields ) {</span></span>
+<span class="line"><span> $checkout_fields[‘billing’][‘billing_email’][‘priority’] = 4;</span></span>
+<span class="line"><span> return $checkout_fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Po prostu ustawiając priorytet na niższą liczbę, ponieważ najniższa liczba to 10, więc ustawiliśmy go na 4 dla wiadomości e-mail, aby stał się pierwszym polem.</p>
+<p>Oto lista numerów priorytetów dla pól rozliczeniowych:</p>
+<ul>
+<li>billing billing_first_name 10</li>
+<li>billing_last_name 20</li>
+<li>billing_company 30</li>
+<li>billing_country 40</li>
+<li>billing_address_1 50</li>
+<li>billing_address_2 60</li>
+<li>billing_city 70</li>
+<li>billing_state 80</li>
+<li>billing_postcode 90</li>
+<li>billing_phone 100</li>
+<li>billing_email 110</li>
+</ul>
+<p><strong>Sprawdź, czy produkt należy do kategorii lub tagu produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if( has_term( 4, ‘product_cat’ ) ) {</span></span>
+<span class="line"><span> // do something if current product in the loop is in product category with ID 4</span></span>
+<span class="line"><span>}if( has_term( array( ‘sneakers’, ‘backpacks’ ), ‘product_cat’, 50 ) {</span></span>
+<span class="line"><span> // do something if product with ID 50 is either in category “sneakers” or “backpacks”</span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span> // do something else if it isn’t</span></span>
+<span class="line"><span>}if( has_term( 5, ‘product_tag’, 971 ) ) {</span></span>
+<span class="line"><span> // do something if product with ID = 971 has tag with ID = 5</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zmień liczbę produktów wyświetlanych na stronie z listą produktów WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Change number of products that are displayed per page (shop page)</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function new_loop_shop_per_page( $cols ) {</span></span>
+<span class="line"><span>  // $cols contains the current number of products per page based on the value stored on Options -> Reading</span></span>
+<span class="line"><span>  // Return the number of products you wanna show per page.</span></span>
+<span class="line"><span>  $cols = 9;</span></span>
+<span class="line"><span>  return $cols;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Add custom check boxes fields above the terms and conditions in WooCommerce checkout</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_action('woocommerce_checkout_before_terms_and_conditions', 'checkout_additional_checkboxes');</span></span>
+<span class="line"><span>function checkout_additional_checkboxes( ){</span></span>
+<span class="line"><span>    $checkbox1_text = __( "My first checkbox text", "woocommerce" );</span></span>
+<span class="line"><span>    $checkbox2_text = __( "My Second checkbox text", "woocommerce" );</span></span>
+<span class="line"><span>    ?></span></span>
+<span class="line"><span>    &#x3C;p class="form-row custom-checkboxes"></span></span>
+<span class="line"><span>        &#x3C;label class="woocommerce-form__label checkbox custom-one"></span></span>
+<span class="line"><span>            &#x3C;input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="custom_one" > &#x3C;span>&#x3C;?php echo  $checkbox1_text; ?>&#x3C;/span> &#x3C;span class="required">*&#x3C;/span></span></span>
+<span class="line"><span>        &#x3C;/label></span></span>
+<span class="line"><span>        &#x3C;label class="woocommerce-form__label checkbox custom-two"></span></span>
+<span class="line"><span>            &#x3C;input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="custom_two" > &#x3C;span>&#x3C;?php echo  $checkbox2_text; ?>&#x3C;/span> &#x3C;span class="required">*&#x3C;/span></span></span>
+<span class="line"><span>        &#x3C;/label></span></span>
+<span class="line"><span>    &#x3C;/p></span></span>
+<span class="line"><span>    &#x3C;?php</span></span>
+<span class="line"><span>}add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');</span></span>
+<span class="line"><span>function my_custom_checkout_field_process() {</span></span>
+<span class="line"><span>    // Check if set, if its not set add an error.</span></span>
+<span class="line"><span>    if ( ! $_POST['custom_one'] )</span></span>
+<span class="line"><span>        wc_add_notice( __( 'You must accept "My first checkbox".' ), 'error' );</span></span>
+<span class="line"><span>    if ( ! $_POST['custom_two'] )</span></span>
+<span class="line"><span>        wc_add_notice( __( 'You must accept "My second checkbox".' ), 'error' );</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Extend admin fields in WooCommerce orders page</p>
+<p>Sometimes you need to further extend the Admin Listing. For instance in the current problem i needed to add the serial numbers to the WooCommerce orders listing.</p>
+<ol>
+<li><code>edit_shop_order_columns</code> is the function where i am rearranging the fields</li>
+<li><code>shop_order_column</code> is the function where i am managing those fields and providing the values respectively.</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'manage_edit-shop_order_columns', 'edit_shop_order_columns' ) ;</span></span>
+<span class="line"><span>function edit_shop_order_columns( $columns ) {</span></span>
+<span class="line"><span> $columns = array(</span></span>
+<span class="line"><span>  'cb' => '&#x26;lt;input type="checkbox" />',</span></span>
+<span class="line"><span>  'order_number' => __( 'Order' ),</span></span>
+<span class="line"><span>  'order_date' => __( 'Order Date' ),</span></span>
+<span class="line"><span>  'order_status' => __( 'Status' ),</span></span>
+<span class="line"><span>  'serial' => __( 'Serial Number' ),</span></span>
+<span class="line"><span>  'order_total' => __( 'Order Total'),</span></span>
+<span class="line"><span> );</span></span>
+<span class="line"><span> return $columns;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>add_action( 'manage_shop_order_posts_custom_column', 'shop_order_column', 10, 2);function shop_order_column( $column, $post_id ) {</span></span>
+<span class="line"><span> global $post;</span></span>
+<span class="line"><span> $arr = "";</span></span>
+<span class="line"><span> if ( 'serial' === $column ) {</span></span>
+<span class="line"><span>  echo get_field('order_serial_number',$post_id);</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span>}add_filter( 'manage_edit-serialnumber_columns', 'edit_serialnumber_columns' );function edit_serialnumber_columns( $columns ) {$columns = array(</span></span>
+<span class="line"><span> 'cb' => '&#x26;lt;input type="checkbox" />',</span></span>
+<span class="line"><span> 'title' => __( 'Serial Numner' ),</span></span>
+<span class="line"><span> 'products' => __( 'Linked Products' ),</span></span>
+<span class="line"><span> 'SKU' => __( 'SKU' ),</span></span>
+<span class="line"><span> 'status' => __( 'Status'),</span></span>
+<span class="line"><span> 'date' => __( 'Added Date' )</span></span>
+<span class="line"><span>);return $columns;</span></span>
+<span class="line"><span>}add_action( 'manage_serialnumber_posts_custom_column', 'realestate_column', 10, 2);</span></span>
+<span class="line"><span>function realestate_column( $column, $post_id ) {global $post;</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> $arr = "";</span></span>
+<span class="line"><span> if ( 'products' === $column ) {</span></span>
+<span class="line"><span>  $productlist = get_field('products',$post_id);</span></span>
+<span class="line"><span>  foreach($productlist as $row) {</span></span>
+<span class="line"><span>   $arr[] = get_the_title($row);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  echo implode(",",$arr);</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> $sku = "";</span></span>
+<span class="line"><span> if ( 'SKU' === $column ) {</span></span>
+<span class="line"><span>  $productlist = get_field('products',$post_id);</span></span>
+<span class="line"><span>  foreach($productlist as $row) {</span></span>
+<span class="line"><span>   $product = wc_get_product( $row );</span></span>
+<span class="line"><span>   echo $row;</span></span>
+<span class="line"><span>   $sku[] = $product->get_sku();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  echo implode(",",$sku);</span></span>
+<span class="line"><span> }if ( 'status' === $column ) {</span></span>
+<span class="line"><span>  echo get_field('available',$post_id);</span></span>
+<span class="line"><span> }}</span></span></code></pre>
+<p><strong>Wyłącz zmienny przedział cenowy produktów WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_variable_price_html', 'variation_price_format_min', 9999, 2 );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function variation_price_format_min( $price, $product ) {</span></span>
+<span class="line"><span>   $prices = $product->get_variation_prices( true );</span></span>
+<span class="line"><span>   $min_price = current( $prices['price'] );</span></span>
+<span class="line"><span>   $price = sprintf( __( 'From: %1$s', 'woocommerce' ), wc_price( $min_price ) );</span></span>
+<span class="line"><span>   return $price;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Ukryj kategorię WooCommerce w wynikach wyszukiwania</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function hide_rentals_from_search_pre_get_posts( $query ) {</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> if (!is_admin() &#x26;&#x26; $query->is_main_query() &#x26;&#x26; $query->is_search()) {</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> $query->set( ‘post_type’, array( ‘product’ ) );//in the current case i want to hide “rental” category, you can easily replace this with some other product category slug</span></span>
+<span class="line"><span> $tax_query = array(</span></span>
+<span class="line"><span> array(</span></span>
+<span class="line"><span> ‘taxonomy’ => ‘product_cat’,</span></span>
+<span class="line"><span> ‘field’ => ‘slug’,</span></span>
+<span class="line"><span> ‘terms’ => ‘rentals’, </span></span>
+<span class="line"><span> ‘operator’ => ‘NOT IN’,</span></span>
+<span class="line"><span> ),</span></span>
+<span class="line"><span> );$query->set( ‘tax_query’, $tax_query );</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>}add_action( ‘pre_get_posts’, ‘hide_rentals_from_search_pre_get_posts’);</span></span></code></pre>
+<p><strong>Usuń pola WooCommerce Checkout</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function custom_override_checkout_fields( $fields ) { </span></span>
+<span class="line"><span>    unset($fields['billing']['billing_first_name']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_last_name']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_company']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_address_1']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_address_2']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_city']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_postcode']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_country']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_state']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_phone']);</span></span>
+<span class="line"><span>    unset($fields['order']['order_comments']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_email']);</span></span>
+<span class="line"><span>    unset($fields['account']['account_username']);</span></span>
+<span class="line"><span>    unset($fields['account']['account_password']);</span></span>
+<span class="line"><span>    unset($fields['account']['account_password-2']);</span></span>
+<span class="line"><span>    return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Możesz dostosować powyższy kod, powiedzmy, że chcesz usunąć tylko pola adresu, wtedy kod wygląda tak:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function custom_override_checkout_fields( $fields ) { </span></span>
+<span class="line"><span>    unset($fields['billing']['billing_address_1']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_address_2']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_city']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_postcode']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_country']);</span></span>
+<span class="line"><span>    unset($fields['billing']['billing_state']);</span></span>
+<span class="line"><span>    return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Spraw, by koszyk zakupów Woocommerce był responsywny</strong></p>
+<p>Dodaj ten kod do arkusza styli Woocommerce</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@media screen and (max-width: 766px) and (min-width: 300px) { /* START Make the cart table responsive */@media screen and (max-width: 600px) { / Force table to not be like tables anymore /</span></span>
+<span class="line"><span>.woocommerce table.shop_table,</span></span>
+<span class="line"><span>.woocommerce table.shop_table thead,</span></span>
+<span class="line"><span>.woocommerce table.shop_table tbody,</span></span>
+<span class="line"><span>.woocommerce table.shop_table th,</span></span>
+<span class="line"><span>.woocommerce table.shop_table td,</span></span>
+<span class="line"><span>.woocommerce table.shop_table tr {</span></span>
+<span class="line"><span>display: block;</span></span>
+<span class="line"><span>} / Hide table headers (but not display: none;, for accessibility) /</span></span>
+<span class="line"><span>.woocommerce table.shop_table thead tr {</span></span>
+<span class="line"><span>position: absolute;</span></span>
+<span class="line"><span>top: -9999px;</span></span>
+<span class="line"><span>left: -9999px;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table tr {</span></span>
+<span class="line"><span>/border: 1px solid #d2d3d3; /</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td {</span></span>
+<span class="line"><span>/ Behave like a “row” /</span></span>
+<span class="line"><span>border: 1px solid #d2d3d3;</span></span>
+<span class="line"><span>position: relative;</span></span>
+<span class="line"><span>padding-left: 50% !important;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table {</span></span>
+<span class="line"><span>border: none;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-spacer {</span></span>
+<span class="line"><span>border-color: #FFF;</span></span>
+<span class="line"><span>height: 10px;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td:before {</span></span>
+<span class="line"><span>/ Now like a table header /</span></span>
+<span class="line"><span>position: absolute;</span></span>
+<span class="line"><span>/ Top/left values mimic padding /</span></span>
+<span class="line"><span>top: 6px;</span></span>
+<span class="line"><span>left: 6px;</span></span>
+<span class="line"><span>width: 25%;</span></span>
+<span class="line"><span>padding-right: 10px;</span></span>
+<span class="line"><span>white-space: nowrap;</span></span>
+<span class="line"><span>} /</span></span>
+<span class="line"><span>Label the data /</span></span>
+<span class="line"><span>.woocommerce table.shop_table td.product-remove:before {</span></span>
+<span class="line"><span>content: “DELETE”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-thumbnail:before {</span></span>
+<span class="line"><span>content: “IMAGE”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-name:before {</span></span>
+<span class="line"><span>content: “PRODUCT”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-price:before {</span></span>
+<span class="line"><span>content: “PRICE”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-quantity:before {</span></span>
+<span class="line"><span>content: “QUANTITY”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-subtotal:before {</span></span>
+<span class="line"><span>content: “SUBTOTAL”;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table td.product-total:before {</span></span>
+<span class="line"><span>content: “TOTAL”;</span></span>
+<span class="line"><span>} .woocommerce .quantity,</span></span>
+<span class="line"><span>.woocommerce #content .quantity,</span></span>
+<span class="line"><span>.woocommerce .quantity,</span></span>
+<span class="line"><span>.woocommerce #content .quantity {</span></span>
+<span class="line"><span>margin: 0;</span></span>
+<span class="line"><span>} .woocommerce table.cart td.actions,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions {</span></span>
+<span class="line"><span>text-align: left;</span></span>
+<span class="line"><span>border:0;</span></span>
+<span class="line"><span>padding-left: 0 !important;</span></span>
+<span class="line"><span>} .woocommerce table.cart td.actions .button.alt,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .button.alt {</span></span>
+<span class="line"><span>float: left;</span></span>
+<span class="line"><span>margin-top: 10px;</span></span>
+<span class="line"><span>} .woocommerce table.cart td.actions div,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions div,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions input,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions input {</span></span>
+<span class="line"><span>margin-bottom: 10px;</span></span>
+<span class="line"><span>} .woocommerce .cart-collaterals .cart_totals {</span></span>
+<span class="line"><span>float: left;</span></span>
+<span class="line"><span>width: 100%;</span></span>
+<span class="line"><span>text-align: left;</span></span>
+<span class="line"><span>} .woocommerce .cart-collaterals .cart_totals th,</span></span>
+<span class="line"><span>.woocommerce .cart-collaterals .cart_totals td {</span></span>
+<span class="line"><span>border:0 !important;</span></span>
+<span class="line"><span>} .woocommerce .cart-collaterals .cart_totals table tr.cart-subtotal td,</span></span>
+<span class="line"><span>.woocommerce .cart-collaterals .cart_totals table tr.shipping td,</span></span>
+<span class="line"><span>.woocommerce .cart-collaterals .cart_totals table tr.total td {</span></span>
+<span class="line"><span>padding-left: 6px !important;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table tr.cart-subtotal td,</span></span>
+<span class="line"><span>.woocommerce table.shop_table tr.shipping td,</span></span>
+<span class="line"><span>.woocommerce table.shop_table tr.total td,</span></span>
+<span class="line"><span>.woocommerce table.shop_table.order_details tfoot th,</span></span>
+<span class="line"><span>.woocommerce table.shop_table.order_details tfoot td {</span></span>
+<span class="line"><span>padding-left: 6px !important;</span></span>
+<span class="line"><span>border:0 !important;</span></span>
+<span class="line"><span>} .woocommerce table.shop_table tbody {</span></span>
+<span class="line"><span>padding-top: 10px;</span></span>
+<span class="line"><span>} .woocommerce .col2-set .col-1,</span></span>
+<span class="line"><span>.woocommerce .col2-set .col-1,</span></span>
+<span class="line"><span>.woocommerce .col2-set .col-2,</span></span>
+<span class="line"><span>.woocommerce .col2-set .col-2,</span></span>
+<span class="line"><span>.woocommerce form .form-row-first,</span></span>
+<span class="line"><span>.woocommerce form .form-row-last,</span></span>
+<span class="line"><span>.woocommerce form .form-row-first,</span></span>
+<span class="line"><span>.woocommerce form .form-row-last {</span></span>
+<span class="line"><span>float: none;</span></span>
+<span class="line"><span>width: 100%;</span></span>
+<span class="line"><span>} .woocommerce .order_details ul,</span></span>
+<span class="line"><span>.woocommerce .order_details ul,</span></span>
+<span class="line"><span>.woocommerce .order_details,</span></span>
+<span class="line"><span>.woocommerce .order_details {</span></span>
+<span class="line"><span>padding:0;</span></span>
+<span class="line"><span>} .woocommerce .order_details li,</span></span>
+<span class="line"><span>.woocommerce .order_details li {</span></span>
+<span class="line"><span>clear: left;</span></span>
+<span class="line"><span>margin-bottom: 10px;</span></span>
+<span class="line"><span>border:0;</span></span>
+<span class="line"><span>} / make buttons full width, text wide anyway, improves effectiveness /</span></span>
+<span class="line"><span>#content table.cart td.actions .button,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .input-text,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions input,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .button,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions input,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .button,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .input-text,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions input,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .button,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions input {</span></span>
+<span class="line"><span>width: 100%;</span></span>
+<span class="line"><span>font-size:12px !important;</span></span>
+<span class="line"><span>} .woocommerce tfoot{</span></span>
+<span class="line"><span>display:block !important;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>.woocommerce tfoot td{</span></span>
+<span class="line"><span>width:100% !important;</span></span>
+<span class="line"><span>display:block !important;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>/ keep coupon at 50% /</span></span>
+<span class="line"><span>#content table.cart td.actions .coupon .button,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon input,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .button,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon input,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon .button,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon input,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .button,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon input {</span></span>
+<span class="line"><span>width: 48%;</span></span>
+<span class="line"><span>font-size:12px !important;</span></span>
+<span class="line"><span>} / clean up how coupon inputs display /</span></span>
+<span class="line"><span>#content table.cart td.actions .coupon,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon {</span></span>
+<span class="line"><span>margin-top: 1.5em;</span></span>
+<span class="line"><span>} #content table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce #content table.cart td.actions .coupon .input-text,</span></span>
+<span class="line"><span>.woocommerce table.cart td.actions .coupon .input-text {</span></span>
+<span class="line"><span>margin-bottom: 1em;</span></span>
+<span class="line"><span>} / remove cross sells, they interfere with flow between cart and cart totals + shipping calculator /</span></span>
+<span class="line"><span>.woocommerce .cart-collaterals .cross-sells,</span></span>
+<span class="line"><span>.woocommerce .cart-collaterals .cross-sells {</span></span>
+<span class="line"><span>display: none;</span></span>
+<span class="line"><span>} }</span></span>
+<span class="line"><span>/* END Make the cart table responsive */ }</span></span></code></pre>
+<p><strong>Sprawdź, czy użytkownik zapłacił już za produkt w WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function CheckWhetherUserPaid() {$bought = false; // Set HERE ine the array your specific target product IDs$prod_arr = array( '21', '67' ); // Get all customer orders$customer_orders = get_posts( array(</span></span>
+<span class="line"><span> 'numberposts' => -1,</span></span>
+<span class="line"><span> 'meta_key' => '_customer_user',</span></span>
+<span class="line"><span> 'meta_value' => get_current_user_id(),</span></span>
+<span class="line"><span> 'post_type' => 'shop_order', // WC orders post type</span></span>
+<span class="line"><span> 'post_status' => 'wc-completed' // Only orders with status “completed”</span></span>
+<span class="line"><span>));foreach ( $customer_orders as $customer_order ) {// Updated compatibility with WooCommerce 3+</span></span>
+<span class="line"><span> $order_id = method_exists( $order, 'get_id' ) ? $order->get_id() : $order->id;</span></span>
+<span class="line"><span> $order = wc_get_order( $customer_order ); // Iterating through each current customer products bought in the order</span></span>
+<span class="line"><span> foreach ($order->get_items() as $item) {// WC 3+ compatibility</span></span>
+<span class="line"><span>  if ( version_compare( WC_VERSION, '3.0', '&#x3C;' ) ) { $product_id = $item['product_id']; } else { $product_id = $item->get_product_id();}// Your condition related to your 2 specific products Ids</span></span>
+<span class="line"><span> if ( in_array( $product_id, $prod_arr ) ) {</span></span>
+<span class="line"><span>  $bought = true;</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span>}}// return “true” if one the specifics products have been bought before by customer</span></span>
+<span class="line"><span>return $bought;}</span></span></code></pre>
+<p><strong>Tryb wakacji / wstrzymania WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Trigger Holiday Mode</span></span>
+<span class="line"><span>add_action ('init', 'woocommerce_holiday_mode');</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>// Disable Cart, Checkout, Add Cart</span></span>
+<span class="line"><span>function woocommerce_holiday_mode() {</span></span>
+<span class="line"><span>   remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );</span></span>
+<span class="line"><span>   remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );</span></span>
+<span class="line"><span>   remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );</span></span>
+<span class="line"><span>   remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );</span></span>
+<span class="line"><span>   add_action( 'woocommerce_before_main_content', 'wc_shop_disabled', 5 );</span></span>
+<span class="line"><span>   add_action( 'woocommerce_before_cart', 'wc_shop_disabled', 5 );</span></span>
+<span class="line"><span>   add_action( 'woocommerce_before_checkout_form', 'wc_shop_disabled', 5 );</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>// Show Holiday Notice</span></span>
+<span class="line"><span>function wc_shop_disabled() {</span></span>
+<span class="line"><span>        wc_print_notice( 'Our Online Shop is Closed Today :)', 'error');</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Odmów realizacji transakcji, jeśli użytkownik ma oczekujące zamówienia</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Deny Checkout if User Has Pending Ordersadd_action('woocommerce_after_checkout_validation', 'deny_checkout_user_pending_orders');</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function deny_checkout_user_pending_orders( $posted ) {</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> global $woocommerce;</span></span>
+<span class="line"><span> $checkout_email = $posted['billing_email'];</span></span>
+<span class="line"><span> $user = get_user_by( 'email', $checkout_email );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span> if ( ! empty( $user ) ) {</span></span>
+<span class="line"><span>  $customer_orders = get_posts( array(</span></span>
+<span class="line"><span>    'numberposts' => -1,</span></span>
+<span class="line"><span>    'meta_key'    => '_customer_user',</span></span>
+<span class="line"><span>    'meta_value'  => $user->ID,</span></span>
+<span class="line"><span>    'post_type'   => 'shop_order', // WC orders post type</span></span>
+<span class="line"><span>    'post_status' => 'wc-pending' // Only orders with status "completed"</span></span>
+<span class="line"><span>  ) );</span></span>
+<span class="line"><span>  foreach ( $customer_orders as $customer_order ) {</span></span>
+<span class="line"><span>    $count++;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  if ( $count > 0 ) {</span></span>
+<span class="line"><span>     wc_add_notice( 'Sorry, please pay your pending orders first by logging into your account', 'error');</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span> }</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zmień pole autofokusa w kasie WooCommerce</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields', 'change_autofocus_checkout_field' );</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>function change_autofocus_checkout_field( $fields ) {</span></span>
+<span class="line"><span> $fields['billing']['billing_first_name']['autofocus'] = false;</span></span>
+<span class="line"><span> $fields['billing']['billing_email']['autofocus'] = true;</span></span>
+<span class="line"><span> return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Pokaż wiadomość w kasie po wybraniu kraju</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Part 1</span></span>
+<span class="line"><span>// Add the message notification and place it over the billing section</span></span>
+<span class="line"><span>// The "display:none" hides it by default</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>add_action( 'woocommerce_before_checkout_billing_form', 'echo_notice_shipping' );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function echo_notice_shipping() {</span></span>
+<span class="line"><span>echo '&#x3C;div class="shipping-notice woocommerce-info" style="display:none">Please allow 5-10 business days for delivery after order processing.&#x3C;/div>';</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>// Part 2</span></span>
+<span class="line"><span>// Show or hide message based on billing country</span></span>
+<span class="line"><span>// The "display:none" hides it by default</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>add_action( 'woocommerce_after_checkout_form', 'show_notice_shipping' );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function show_notice_shipping(){</span></span>
+<span class="line"><span>     </span></span>
+<span class="line"><span>    ?></span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>    &#x3C;script></span></span>
+<span class="line"><span>        jQuery(document).ready(function($){</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>            // Set the country code (That will display the message)</span></span>
+<span class="line"><span>            var countryCode = 'FR';</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>            $('select#billing_country').change(function(){</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>                selectedCountry = $('select#billing_country').val();</span></span>
+<span class="line"><span>                  </span></span>
+<span class="line"><span>                if( selectedCountry == countryCode ){</span></span>
+<span class="line"><span>                    $('.shipping-notice').show();</span></span>
+<span class="line"><span>                }</span></span>
+<span class="line"><span>                else {</span></span>
+<span class="line"><span>                    $('.shipping-notice').hide();</span></span>
+<span class="line"><span>                }</span></span>
+<span class="line"><span>            });</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>        });</span></span>
+<span class="line"><span>    &#x3C;/script></span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>    &#x3C;?php</span></span>
+<span class="line"><span>     </span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Wyłącz metodę płatności dla określonej kategorii</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_available_payment_gateways', 'unset_gateway_by_category' );</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>function unset_gateway_by_category( $available_gateways ) {</span></span>
+<span class="line"><span>    if ( is_admin() ) return $available_gateways;</span></span>
+<span class="line"><span>    if ( ! is_checkout() ) return $available_gateways;</span></span>
+<span class="line"><span>    $unset = false;</span></span>
+<span class="line"><span>    $category_ids = array( 8, 37 ); //change category id here </span></span>
+<span class="line"><span>    foreach ( WC()->cart->get_cart_contents() as $key => $values ) {</span></span>
+<span class="line"><span>        $terms = get_the_terms( $values['product_id'], 'product_cat' );    </span></span>
+<span class="line"><span>        foreach ( $terms as $term ) {        </span></span>
+<span class="line"><span>            if ( in_array( $term->term_id, $category_ids ) ) {</span></span>
+<span class="line"><span>                $unset = true;</span></span>
+<span class="line"><span>                break;</span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    if ( $unset == true ) unset( $available_gateways['cheque'] );</span></span>
+<span class="line"><span>    return $available_gateways;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Ogranicz pole uwag do zamówienia WooCommerce do określonej liczby znaków</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add_filter( 'woocommerce_checkout_fields', 'filter_checkout_fields' ); </span></span>
+<span class="line"><span>function filter_checkout_fields( $fields ) { </span></span>
+<span class="line"><span>   $fields['order']['order_comments']['maxlength'] = 180; </span></span>
+<span class="line"><span>   return $fields;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><strong>Zaktualizuj główną cenę produktu po wybraniu wariantu produktu</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#B392F0">add_action</span><span style="color:#E1E4E8">( </span><span style="color:#9ECBFF">'woocommerce_variable_add_to_cart'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'custom_update_price_with_variation_price'</span><span style="color:#E1E4E8"> );</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> custom_update_price_with_variation_price</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">   global</span><span style="color:#E1E4E8"> $product;</span></span>
+<span class="line"><span style="color:#E1E4E8">   $price </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> $product</span><span style="color:#F97583">-></span><span style="color:#B392F0">get_price_html</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">   wc_enqueue_js</span><span style="color:#E1E4E8">( </span><span style="color:#9ECBFF">"      </span></span>
+<span class="line"><span style="color:#9ECBFF">      $(document).on('found_variation', 'form.cart', function( event, variation ) {   </span></span>
+<span class="line"><span style="color:#9ECBFF">         if(variation.price_html) $('.summary > p.price').html(variation.price_html);</span></span>
+<span class="line"><span style="color:#9ECBFF">         $('.woocommerce-variation-price').hide();</span></span>
+<span class="line"><span style="color:#9ECBFF">      });</span></span>
+<span class="line"><span style="color:#9ECBFF">      $(document).on('hide_variation', 'form.cart', function( event, variation ) {   </span></span>
+<span class="line"><span style="color:#9ECBFF">         $('.summary > p.price').html('"</span><span style="color:#F97583"> .</span><span style="color:#E1E4E8"> $price </span><span style="color:#F97583">.</span><span style="color:#9ECBFF"> "');</span></span>
+<span class="line"><span style="color:#9ECBFF">      });</span></span>
+<span class="line"><span style="color:#9ECBFF">   "</span><span style="color:#E1E4E8"> );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+          </section>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="sticky top-38">
+          <section>
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">
+              Kategorie
+            </h3>
+            <ul class="space-y-2">
+                <li>
+                    <a href="/tags/marketing/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700">
+                      Marketing
+                    </a>
+                  </li><li>
+                    <a href="/tags/poradniki/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700">
+                      Poradniki
+                    </a>
+                  </li><li>
+                    <a href="/tags/pozycjonowanie/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700">
+                      Pozycjonowanie
+                    </a>
+                  </li><li>
+                    <a href="/tags/strony-www/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700">
+                      Strony www
+                    </a>
+                  </li><li>
+                    <a href="/tags/sztuczna-inteligencja/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700">
+                      Sztuczna inteligencja
+                    </a>
+                  </li><li>
+                    <a href="/tags/wordpress/" class="block rounded-xl border px-4 py-3 text-sm transition-all bg-orange-50 border-orange-500/40 text-orange-700" aria-current="page">
+                      Wordpress
+                    </a>
+                  </li>
+              </ul>
+          </section>
+        </div>
+      </aside>
+
+    </div>
+
+    <section class="mx-auto max-w-7xl space-y-6 pt-6 mt-16 border-t border-black/10">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-[var(--text)]">Przeczytaj też</h2>
+          <a href="/artykuly/" class="flex items-center gap-3 group text-black/90 font-bold text-[11px] uppercase tracking-widest hover:text-orange-600 transition-colors hidden md:block">
+            Wszystkie wpisy
+            <span class="text-orange-600 text-lg -translate-y-0.5 group-hover:translate-x-1 transition-transform">&gt;&gt;&gt;</span>
+          </a>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <a class="group flex h-full w-full flex-col rounded-2xl border border-[var(--border)] bg-white px-5 pb-8 pt-6 md:px-6 transition-transform hover:scale-[1.02]" href="https://przemekmiros.pl/artykuly/dostosowanie-strony-internetowej-do-potrzeb-osób-niepełnosprawnych/">
+                <div class="mb-4 flex items-start justify-between">
+                  <span class="flex items-center gap-2 rounded-full border border-black/20 px-3 py-1.5 text-[10px] font-bold uppercase text-black">
+                    <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-[var(--accent)] text-[8px] text-white">II</span>
+                    Strony www
+                  </span>
+                  <div class="rounded-full border border-black/20 p-2">
+                    <svg class="h-3 w-3 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  
+<img src="/.netlify/images?url=_astro%2Fwcag.CbHC8sVM.jpg&#38;w=1920&#38;h=1281" srcset="/.netlify/images?url=_astro%2Fwcag.CbHC8sVM.jpg&#38;w=360&#38;h=240 360w, /.netlify/images?url=_astro%2Fwcag.CbHC8sVM.jpg&#38;w=520&#38;h=347 520w, /.netlify/images?url=_astro%2Fwcag.CbHC8sVM.jpg&#38;w=720&#38;h=480 720w" alt="Dostosowanie strony www dla osób niepełnosprawnych" sizes="(max-width: 900px) 100vw, 320px" loading="lazy" placeholder="blur" decoding="async" fetchpriority="auto" width="1920" height="1281" class="h-[185px] w-full rounded-xl border border-black/10 object-cover">
+                </div>
+
+                <div>
+                  <h3 class="mb-3 text-xl font-semibold leading-snug text-black line-clamp-2">
+                    Dostosowanie strony www dla osób niepełnosprawnych
+                  </h3>
+                  <p class="text-sm leading-relaxed text-black/70 line-clamp-3">Dostosowanie strony internetowej do potrzeb osób niepełnosprawnych jest ważnym aspektem tworzenia stron. Jest to proces, który pozwala na zapewnienie łatwego dostępu do treści i funkcjonalności strony dla osób z różnymi rodzajami niepełnosprawności.</p>
+                </div>
+              </a><a class="group flex h-full w-full flex-col rounded-2xl border border-[var(--border)] bg-white px-5 pb-8 pt-6 md:px-6 transition-transform hover:scale-[1.02]" href="https://przemekmiros.pl/artykuly/bootstrap-co-to-jest/">
+                <div class="mb-4 flex items-start justify-between">
+                  <span class="flex items-center gap-2 rounded-full border border-black/20 px-3 py-1.5 text-[10px] font-bold uppercase text-black">
+                    <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-[var(--accent)] text-[8px] text-white">II</span>
+                    Poradniki
+                  </span>
+                  <div class="rounded-full border border-black/20 p-2">
+                    <svg class="h-3 w-3 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  
+<img src="/.netlify/images?url=_astro%2Fbootstrap.hN4zQU9D.png&#38;w=1392&#38;h=730" srcset="/.netlify/images?url=_astro%2Fbootstrap.hN4zQU9D.png&#38;w=360&#38;h=189 360w, /.netlify/images?url=_astro%2Fbootstrap.hN4zQU9D.png&#38;w=520&#38;h=273 520w, /.netlify/images?url=_astro%2Fbootstrap.hN4zQU9D.png&#38;w=720&#38;h=378 720w" alt="Bootstrap - co to jest i co daje?" sizes="(max-width: 900px) 100vw, 320px" loading="lazy" placeholder="blur" decoding="async" fetchpriority="auto" width="1392" height="730" class="h-[185px] w-full rounded-xl border border-black/10 object-cover">
+                </div>
+
+                <div>
+                  <h3 class="mb-3 text-xl font-semibold leading-snug text-black line-clamp-2">
+                    Bootstrap - co to jest i co daje?
+                  </h3>
+                  <p class="text-sm leading-relaxed text-black/70 line-clamp-3">Bootstrap jest popularnym frameworkiem css do budowania responsywnych stron internetowych. Został stworzony przez programistów Twittera i udostępniony jako projekt open-source.</p>
+                </div>
+              </a><a class="group flex h-full w-full flex-col rounded-2xl border border-[var(--border)] bg-white px-5 pb-8 pt-6 md:px-6 transition-transform hover:scale-[1.02]" href="https://przemekmiros.pl/artykuly/user-experience-jest-wazne-dla-seo/">
+                <div class="mb-4 flex items-start justify-between">
+                  <span class="flex items-center gap-2 rounded-full border border-black/20 px-3 py-1.5 text-[10px] font-bold uppercase text-black">
+                    <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-[var(--accent)] text-[8px] text-white">II</span>
+                    Pozycjonowanie
+                  </span>
+                  <div class="rounded-full border border-black/20 p-2">
+                    <svg class="h-3 w-3 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  
+<img src="/.netlify/images?url=_astro%2Fblog-ux-seo.CIkoo7RD.jpg&#38;w=1392&#38;h=730" srcset="/.netlify/images?url=_astro%2Fblog-ux-seo.CIkoo7RD.jpg&#38;w=360&#38;h=189 360w, /.netlify/images?url=_astro%2Fblog-ux-seo.CIkoo7RD.jpg&#38;w=520&#38;h=273 520w, /.netlify/images?url=_astro%2Fblog-ux-seo.CIkoo7RD.jpg&#38;w=720&#38;h=378 720w" alt="User Experience jest ważne dla SEO" sizes="(max-width: 900px) 100vw, 320px" loading="lazy" placeholder="blur" decoding="async" fetchpriority="auto" width="1392" height="730" class="h-[185px] w-full rounded-xl border border-black/10 object-cover">
+                </div>
+
+                <div>
+                  <h3 class="mb-3 text-xl font-semibold leading-snug text-black line-clamp-2">
+                    User Experience jest ważne dla SEO
+                  </h3>
+                  <p class="text-sm leading-relaxed text-black/70 line-clamp-3">Według badań około 80% osób, które mają telefon komórkowy, używa go do łączenia się z Internetem, a połowa z nich korzysta z internetu przynajmniej raz dziennie</p>
+                </div>
+              </a>
+        </div>
+      </section>
+  </article>
+  <script type="module">const l=()=>{const n=Array.from(document.querySelectorAll("[data-toc-link]")),a=n.map(e=>document.getElementById(e.dataset.tocTarget)).filter(Boolean);if(!n.length||!a.length)return;typeof window.__articleTocCleanup=="function"&&window.__articleTocCleanup();const d=new AbortController,{signal:c}=d,u=144,f=e=>{n.forEach(t=>{const o=t.dataset.tocTarget===e;t.classList.toggle("text-[var(--accent)]",o)})},r=(e,t=!0)=>{const o=e.getBoundingClientRect().top+window.scrollY-u;window.scrollTo({top:o,behavior:t?"smooth":"auto"}),f(e.id)},s=()=>{const e=window.scrollY+u+1;let t=a[0];for(const o of a)if(o.offsetTop<=e)t=o;else break;t&&f(t.id)};let i=!1;const m=()=>{i||(i=!0,requestAnimationFrame(()=>{s(),i=!1}))};window.addEventListener("scroll",m,{passive:!0,signal:c}),window.addEventListener("resize",m,{signal:c}),window.addEventListener("hashchange",()=>{const e=decodeURIComponent(window.location.hash.replace(/^#/,"")),t=e?document.getElementById(e):null;t&&r(t,!0)},{signal:c}),n.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const o=document.getElementById(e.dataset.tocTarget);o&&(r(o,!0),history.replaceState(null,"",`#${o.id}`),setTimeout(s,0))},{signal:c})});const g=decodeURIComponent(window.location.hash.replace(/^#/,"")),w=g?document.getElementById(g):null;w?requestAnimationFrame(()=>{requestAnimationFrame(()=>r(w,!0))}):s(),window.__articleTocCleanup=()=>d.abort()};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",l,{once:!0}):l();document.addEventListener("astro:page-load",l);</script>
+
+      <footer class="bg-black relative text-gray-400 pb-9 pt-18 font-sans">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
+  <div class="relative max-w-7xl mx-auto">
+    
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-gray-800 pb-12 mb-12 gap-8">
+      <div class="flex items-center">
+      <img src="/_astro/logo.B5XILTm-.png" class="w-42" width="280" height="66" alt="Logo Przemek Miros">
+      </div>
+
+        <div class="flex flex-wrap sm:flex-row items-center gap-3">
+          <span class="text-white font-bold">Google</span>
+            <div class="flex text-orange-500 text-lg">★★★★★ </div>
+            <p class="text-[14px]"><span class="text-white font-bold">5/5</span>&nbsp; średnia ocena na podstawie 15+ opinii&nbsp;&nbsp;</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-16">
+      <div>
+        <h3 class="text-white font-bold mb-6">Kontakt</h3>
+        <div class="text-xs space-y-2 mb-6 leading-relaxed">
+          <p>Przemek Miros</p>
+          <p>kontakt@przemekmiros.pl</p>
+          <p>+48 788 660 </p>
+          <p>05-660 Warka</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-6">Nawigacja</h3>
+        <ul class="text-xs space-y-3">
+          <li><a href="/realizacje/" class="hover:text-white transition-colors" title="Realizacje">Realizacje</a></li>
+          <li><a href="/artykuly/" class="hover:text-white transition-colors" title="Artykuły">Artykuły</a></li>
+          <li><a href="/opinie/" class="hover:text-white transition-colors" title="O mnie">Opinie</a></li>
+          <li><a href="/miasta/" class="hover:text-white transition-colors" title="O mnie">Miasta</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-6">Social media</h3>
+        <ul class="text-xs space-y-3">
+          <li><a href="https://www.facebook.com/przemekstronyinternetowe" class="hover:text-white transition-colors" title="Facebook" target="_blank">Facebook</a></li>
+          <li><a href="#https://www.behance.net/przemyslaw" class="hover:text-white transition-colors flex items-center gap-1" title="Behance" target="_blank">Behance <span class="text-[10px]">↗</span></a></li>
+          <li><a href="https://github.com/PrzemekMiros" class="hover:text-white transition-colors flex items-center gap-1" title="Github">Github <span class="text-[10px]">↗</span></a></li>
+          <li><a href="https://codepen.io/przemek-miros/" class="hover:text-white transition-colors" title="Codepen" target="_blank">Codepen <span class="text-[10px]">↗</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-6">Narzędzia</h3>
+        <ul class="text-xs space-y-3">
+          <li><a href="https://www.senuto.com/pl/" class="hover:text-white transition-colors" title="Senuto">Senuto <span class="text-[10px]">↗</span></a></li>
+          <li><a href="https://ahrefs.com/" class="hover:text-white transition-colors" title="Ahrefs">Ahrefs <span class="text-[10px]">↗</span></a></li>
+          <li><a href="https://gemini.google.com/" class="hover:text-white transition-colors" title="Gemini">Gemini <span class="text-[10px]">↗</span></a></li>
+          <li><a href="https://www.figma.com/" class="hover:text-white transition-colors" title="Figma">Figma <span class="text-[10px]">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between md:items-center border-t border-gray-800 pt-8 gap-6">
+      <div class="flex flex-wrap justify-left gap-6 text-[11px]">
+        <a href="#" class="hover:text-white transition-colors" title="Pliki cookies" data-cookie-open>Pliki cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="fixed inset-0 hidden bg-black/10 flex items-center justify-center z-[9999] p-4 font-sans text-left" data-cookie-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cookieconsent-title" tabindex="-1">
+  <div class="bg-white rounded-lg shadow-2xl max-w-[600px] w-full overflow-hidden border border-gray-200">
+    <div class="p-6 md:p-8 flex border-b border-gray-300">
+      <div class="flex flex-col">
+        <span id="cookieconsent-title" class="text-lg font-semibold text-gray-900 leading-tight">Strona używa plików cookie</span>
+      </div>
+    </div>
+
+    <div class="px-6 md:px-8 flex border-b border-gray-300" role="tablist" aria-label="Cookie consent">
+      <button class="flex-1 py-3 text-[var(--accent)] font-bold text-[11px] uppercase tracking-wider border-b-2 border-[var(--accent)] cursor-pointer" type="button" data-cookie-tab="consent" role="tab" id="cookie-tab-consent" aria-controls="cookie-panel-consent" aria-selected="true">
+        Zgoda
+      </button>
+      <button class="flex-1 py-3 text-[var(--accent)] font-bold text-[11px] uppercase tracking-wider border-b-2 border-[var(--accent)] cursor-pointer text-[#00a3ff]" type="button" data-cookie-tab="details" role="tab" id="cookie-tab-details" aria-controls="cookie-panel-details" aria-selected="false">
+        Szczegóły
+      </button>
+      <button class="flex-1 py-3 text-[var(--accent)] font-bold text-[11px] uppercase tracking-wider border-b-2 border-[var(--accent)] cursor-pointer text-[#00a3ff]" type="button" data-cookie-tab="about" role="tab" id="cookie-tab-about" aria-controls="cookie-panel-about" aria-selected="true">
+        Info
+      </button>
+    </div>
+
+    <div class="p-6 md:p-8" data-cookie-panel="consent" role="tabpanel" id="cookie-panel-consent" aria-labelledby="cookie-tab-consent">
+      <p class="text-gray-600 text-[12px] leading-[1.6]">
+        Strona używa plików cookie, aby personalizować treści, udostępniać funkcje mediów społecznościowych i analizować ruch. Udostępnia również informacje o tym, jak korzystasz z witryny, naszym partnerom społecznościowym, reklamowym i analitycznym.
+      </p>
+    </div>
+
+    <div class="p-6 md:p-8 hidden" data-cookie-panel="details" role="tabpanel" id="cookie-panel-details" aria-labelledby="cookie-tab-details">
+      <p class="text-gray-600 text-[12px] leading-[1.6] mb-4">
+        Wybierz, na jakie kategorie plików cookie wyrażasz zgodę. Niezbędne są zawsze aktywne.
+      </p>
+      <div class="space-y-3 text-[12px] text-gray-700">
+        <label class="flex items-center justify-between rounded border border-gray-200 px-3 py-2">
+          <span>Niezbędne</span>
+          <span class="flex items-center gap-2">
+            <span class="text-[10px] uppercase tracking-wider text-gray-400">Zawsze aktywne</span>
+            <input type="checkbox" checked disabled data-cookie-category="necessary" aria-label="Niezbędne" class="h-4 w-4 rounded border-gray-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-60">
+          </span>
+        </label>
+        <label class="flex items-center justify-between rounded border border-gray-200 px-3 py-2">
+          <span>Funkcjonalne</span>
+          <input type="checkbox" data-cookie-category="functional" aria-label="Funkcjonalne" class="h-4 w-4 rounded border-gray-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]">
+        </label>
+        <label class="flex items-center justify-between rounded border border-gray-200 px-3 py-2">
+          <span>Analityczne</span>
+          <input type="checkbox" data-cookie-category="analytics" aria-label="Analityczne" class="h-4 w-4 rounded border-gray-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]">
+        </label>
+        <label class="flex items-center justify-between rounded border border-gray-200 px-3 py-2">
+          <span>Marketingowe</span>
+          <input type="checkbox" data-cookie-category="marketing" aria-label="Marketingowe" class="h-4 w-4 rounded border-gray-300 text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]">
+        </label>
+      </div>
+      <div class="mt-5">
+        <button class="cursor-pointer w-full bg-[var(--accent)] text-white font-bold py-3 px-4 rounded-lg transition-colors text-[11px] uppercase tracking-wide" type="button" data-cookie-save>
+          Zapisz ustawienia
+        </button>
+      </div>
+    </div>
+
+    <div class="p-6 md:p-8 hidden" data-cookie-panel="about" role="tabpanel" id="cookie-panel-about" aria-labelledby="cookie-tab-about">
+      <p class="text-gray-600 text-[12px] leading-[1.6]">
+        Pliki cookie to niewielkie informacje zapisywane w Twojej przeglądarce. Pomagają działać stronie,
+        zapamiętywać ustawienia oraz mierzyć ruch. Możesz zmienić zgodę w każdej chwili w ustawieniach.
+      </p>
+    </div>
+
+    <div class="p-6 md:p-8 pt-0 flex flex-col md:flex-row gap-2">
+      <button class="cursor-pointer flex-1 bg-[var(--accent)] text-white font-bold py-3 px-4 rounded-lg transition-colors text-[11px] uppercase tracking-wide" type="button" data-cookie-deny>
+        Odmów
+      </button>
+      <button class="cursor-pointer flex-1 bg-[var(--accent)] text-white font-bold py-3 px-4 rounded-lg transition-colors text-[11px] uppercase tracking-wide flex items-center justify-center gap-1" type="button" data-cookie-customize>
+        Dostosuj
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+      <button class="cursor-pointer flex-1 bg-[var(--accent)] text-white font-bold py-3 px-4 rounded-lg transition-colors text-[11px] uppercase tracking-wide" type="button" data-cookie-accept>
+        Zezwól
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="circle-container hidden md:flex items-center justify-center relative">
+		<svg class="circle-progress svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+		</svg>
+    <svg class="h-4 w-4 text-white absolute top-4 left-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="var(--accent)">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+    </svg>
+</div>
+
+<script type="module">document.addEventListener("astro:page-load",function(){const e=document.querySelector(".circle-container");if(!e)return;const r=50,t=document.querySelector(".circle-container path"),o=t.getTotalLength();t.style.transition=t.style.WebkitTransition="none",t.style.strokeDasharray=o,t.style.strokeDashoffset=o,requestAnimationFrame(()=>{requestAnimationFrame(()=>{t.style.transition=t.style.WebkitTransition="stroke-dashoffset 10ms linear"})});const s=()=>{const i=window.scrollY,a=document.documentElement.scrollHeight,l=window.innerHeight,d=Math.max(1,a-l),h=o-i*o/d;t.style.strokeDashoffset=h,i>r?e.classList.add("active"):e.classList.remove("active")};let n=!1;const c=()=>{n||(n=!0,requestAnimationFrame(()=>{s(),n=!1}))};e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})},window.addEventListener("scroll",c,{passive:!0}),s()});</script>
+
+<script src="/_astro/cookie-modal.CVlHGRPJ.js" defer></script>
+<script src="data:text/javascript;base64,Y29uc3QgRU5EUE9JTlQgPSAiaHR0cHM6Ly93d3cuZnV0dXJld2Vic3R1ZGlvLnBsL2NvbnRhY3RGb3JtUG9ydGZvbGlvLnBocCI7DQpjb25zdCBNRVNTQUdFUyA9IHsNCiAgc2VuZGluZzogIld5c3nFgmFtIHdpYWRvbW/Fm8SHLi4uIiwNCiAgZXJyb3I6ICJXeXN0xIVwacWCIHByb2JsZW0uIFNwcsOzYnVqIHBvbm93bmllIHphIGNod2lsxJkuIiwNCiAgZmFsbGJhY2s6ICJXaWFkb21vxZvEhyBkb3RhcsWCYSAtIHNrb250YWt0dWplbXkgc2nEmSB3a3LDs3RjZS4iLA0KfTsNCg0KZnVuY3Rpb24gY3JlYXRlU3VibWl0SGFuZGxlcihmb3JtLCBzdGF0dXNFbCkgew0KICByZXR1cm4gYXN5bmMgZnVuY3Rpb24gaGFuZGxlQ29udGFjdFN1Ym1pdChldmVudCkgew0KICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7DQogICAgaWYgKHN0YXR1c0VsKSB7DQogICAgICBzdGF0dXNFbC50ZXh0Q29udGVudCA9IE1FU1NBR0VTLnNlbmRpbmc7DQogICAgICBzdGF0dXNFbC5kYXRhc2V0LnN0YXRlID0gInNlbmRpbmciOw0KICAgIH0NCg0KICAgIGNvbnN0IGZvcm1EYXRhID0gbmV3IEZvcm1EYXRhKGZvcm0pOw0KDQogICAgdHJ5IHsNCiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goRU5EUE9JTlQsIHsNCiAgICAgICAgbWV0aG9kOiAiUE9TVCIsDQogICAgICAgIG1vZGU6ICJjb3JzIiwNCiAgICAgICAgaGVhZGVyczogew0KICAgICAgICAgIEFjY2VwdDogImFwcGxpY2F0aW9uL2pzb24iLA0KICAgICAgICB9LA0KICAgICAgICBib2R5OiBmb3JtRGF0YSwNCiAgICAgIH0pOw0KDQogICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7DQogICAgICAgIHRocm93IG5ldyBFcnJvcigiTmllIHVkYcWCbyBzacSZIHd5c8WCYcSHIHdpYWRvbW/Fm2NpIik7DQogICAgICB9DQoNCiAgICAgIGNvbnN0IHJlc3VsdCA9IGF3YWl0IHJlc3BvbnNlLmpzb24oKTsNCiAgICAgIGlmIChzdGF0dXNFbCkgew0KICAgICAgICBzdGF0dXNFbC5pbm5lckhUTUwgPSByZXN1bHQ/Lm1lc3NhZ2UgPz8gTUVTU0FHRVMuZmFsbGJhY2s7DQogICAgICAgIHN0YXR1c0VsLmRhdGFzZXQuc3RhdGUgPSAic3VjY2VzcyI7DQogICAgICB9DQoNCiAgICAgIGZvcm0ucmVzZXQoKTsNCiAgICB9IGNhdGNoIChlcnJvcikgew0KICAgICAgY29uc29sZS5lcnJvcigiQsWCxIVkIGZvcm11bGFyemEga29udGFrdG93ZWdvOiIsIGVycm9yKTsNCiAgICAgIGlmIChzdGF0dXNFbCkgew0KICAgICAgICBzdGF0dXNFbC50ZXh0Q29udGVudCA9IE1FU1NBR0VTLmVycm9yOw0KICAgICAgICBzdGF0dXNFbC5kYXRhc2V0LnN0YXRlID0gImVycm9yIjsNCiAgICAgIH0NCiAgICB9DQogIH07DQp9DQoNCmZ1bmN0aW9uIGluaXRDb250YWN0Rm9ybSgpIHsNCiAgY29uc3QgZm9ybSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjb250YWN0Rm9ybSIpOw0KICBpZiAoIWZvcm0pIHJldHVybjsNCg0KICBjb25zdCBzdGF0dXNFbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjb250YWN0LWZvcm0tc3RhdHVzIik7DQogIGlmIChmb3JtLl9fY29udGFjdEZvcm1IYW5kbGVyKSB7DQogICAgZm9ybS5yZW1vdmVFdmVudExpc3RlbmVyKCJzdWJtaXQiLCBmb3JtLl9fY29udGFjdEZvcm1IYW5kbGVyKTsNCiAgfQ0KDQogIGNvbnN0IGhhbmRsZXIgPSBjcmVhdGVTdWJtaXRIYW5kbGVyKGZvcm0sIHN0YXR1c0VsKTsNCiAgZm9ybS5fX2NvbnRhY3RGb3JtSGFuZGxlciA9IGhhbmRsZXI7DQogIGZvcm0uYWRkRXZlbnRMaXN0ZW5lcigic3VibWl0IiwgaGFuZGxlcik7DQp9DQoNCmZ1bmN0aW9uIHJ1bkNvbnRhY3RGb3JtSW5pdCgpIHsNCiAgaW5pdENvbnRhY3RGb3JtKCk7DQp9DQoNCnJ1bkNvbnRhY3RGb3JtSW5pdCgpOw0KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigiRE9NQ29udGVudExvYWRlZCIsIHJ1bkNvbnRhY3RGb3JtSW5pdCk7DQpkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJhc3RybzpwYWdlLWxvYWQiLCBydW5Db250YWN0Rm9ybUluaXQpOw0KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigiYXN0cm86YWZ0ZXItc3dhcCIsIHJ1bkNvbnRhY3RGb3JtSW5pdCk7DQo=" defer></script>
+    </main>
+    <script>
+      const applyBlurLazy = () => {
+        document.querySelectorAll("main img").forEach((img) => {
+          if (img.dataset.blurLazy === "true") return;
+          img.dataset.blurLazy = "true";
+          img.setAttribute("loading", "lazy");
+          img.setAttribute("decoding", "async");
+          img.classList.add("blur-sm", "transition-[filter]", "duration-500");
+          const clearBlur = () => img.classList.remove("blur-sm");
+          if (img.complete) {
+            clearBlur();
+          } else {
+            img.addEventListener("load", clearBlur, { once: true });
+            img.addEventListener("error", clearBlur, { once: true });
+          }
+        });
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyBlurLazy);
+      } else {
+        applyBlurLazy();
+      }
+      document.addEventListener("astro:page-load", applyBlurLazy);
+      document.addEventListener("astro:after-swap", applyBlurLazy);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroFull from "../components/home/HeroFull.astro";
+import Description from "../components/home/Description.astro";
+import settings from "../content/ustawienia.json";
+
+const { site } = Astro;
+const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const siteUrl = baseUrl ? `${baseUrl}/` : "/";
+const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
+---
+
+<BaseLayout
+  title="Projektowanie stron internetowych"
+  description="Nowoczesne strony internetowe: strategia, design, wdrozenie i wsparcie. Minimalistycznie, szybko i z mysla o wynikach."
+  showHero={false}
+>
+  <div itemscope itemtype="https://schema.org/WebSite">
+    <meta itemprop="name" content={settings.siteTitle} />
+    <meta itemprop="url" content={siteUrl} />
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content={settings.siteTitle} />
+      {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
+    </div>
+  </div>
+	<HeroFull />
+  <Description />
+
+</BaseLayout>

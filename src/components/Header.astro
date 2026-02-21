@@ -1,0 +1,124 @@
+---
+import logo from "../assets/images/global/logo.png";
+const { settings } = Astro.props;
+const pathname = Astro.url?.pathname ?? "";
+const isActive = (href) =>
+	href === "/" ? pathname === "/" : pathname.startsWith(href);
+const navItems = [
+	{ href: "/produkty/", label: "Produkty" },
+    { href: "/o-nas/", label: "O nas" },
+    { href: "/faq/", label: "Faq" },
+	{ href: "/wspolpraca/", label: "Współpraca" },
+	{ href: "/kontakt/", label: "Kontakt" },
+];
+const linkClass = (href) =>
+	isActive(href)
+		? "px-3 py-3 text-black no-underline transition hover:brightness-95"
+		: "px-3 py-3 text-black/70 no-underline transition hover:text-black";
+const mobileLinkClass = (href) =>
+	isActive(href)
+		? "text-xl px-5 py-4 text-base font-semibold"
+		: "text-xl bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/5";
+---
+
+<header class="fixed left-0 right-0 top-0 z-500 bg-[#E5E4E0] border-b border-black/15 py-5 sm:pb-4 sm:pt-4">
+    <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-10 md:px-10 xl:px-0">
+        <nav class="flex items-center justify-between gap-4">
+            <a href="/" class="text-xl font-bold tracking-tighter text-white no-underline" aria-label="Logo">
+              <img src={logo.src} class="w-12" width="38" height="40" alt="Logo Mooneso">
+            </a>
+
+            <div class="hidden items-center justify-center gap-8 text-sm font-medium md:flex">
+                {
+                    navItems.map((item) => (
+                        <a
+                            class={`${linkClass(item.href)} transition-colors uppercase`}
+                            href={item.href}
+                            aria-current={isActive(item.href) ? "page" : undefined}
+                        >
+                            {item.label}
+                        </a>
+                    ))
+                }
+            </div>
+
+              <a href="/kontakt/" title="Wycena" class="hidden md:inline-flex group relative h-11 items-center justify-center rounded-md bg-[var(--accent)] px-6 font-medium text-neutral-200"><span>Koszyk</span><div class="relative ml-1 h-5 w-5 overflow-hidden"><div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -translate-x-4"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></div></a>
+
+            <button
+                class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 md:hidden"
+                type="button"
+                data-mobile-toggle
+            >
+                Menu
+            </button>
+        </nav>
+
+        <div
+            class="fixed inset-x-0 top-0 z-[60] h-screen flex flex-col gap-6 overflow-hidden bg-[#0a0a0a] p-8 text-white transition-all duration-300 pointer-events-none opacity-0 md:hidden"
+            id="mobile-menu"
+            data-mobile-menu
+        >
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Nawigacja</span>
+                <button
+                    class="text-[10px] font-bold uppercase tracking-widest text-orange-500"
+                    type="button"
+                    data-mobile-close
+                >
+                    Zamknij
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-6 pt-12">
+                {
+                    navItems.map((item) => (
+                        <a
+                            class="text-xl font-semibold tracking-tight text-white no-underline"
+                            href={item.href}
+                            data-mobile-link
+                        >
+                            {item.label}
+                        </a>
+						<div class="border border-b border-white/10"></div>
+                    ))
+                }
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Klasa pomocnicza dla otwartego menu */
+    #mobile-menu.is-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+</style>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const toggle = document.querySelector("[data-mobile-toggle]");
+        const menu = document.querySelector("[data-mobile-menu]");
+        const closeBtn = document.querySelector("[data-mobile-close]");
+        const links = document.querySelectorAll("[data-mobile-link]");
+
+        if (toggle && menu) {
+            const setOpen = (isOpen) => {
+                menu.classList.toggle("is-open", isOpen);
+                document.body.style.overflow = isOpen ? "hidden" : "";
+            };
+
+            toggle.addEventListener("click", () => setOpen(true));
+            closeBtn?.addEventListener("click", () => setOpen(false));
+            
+            /*
+            // Zamknij po kliknięciu w link
+            links.forEach(link => {
+                link.addEventListener("click", () => setOpen(false));
+            });
+            */
+        }
+    });
+</script>
