@@ -224,11 +224,48 @@ document.addEventListener("astro:page-load", function () {
 <script src={lenisUrl} defer></script>
 <script src={animationsUrl} defer></script>
 <script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    if (typeof window.animationMain === "function") {
-      window.animationMain();
+  (async () => {
+    const libs = [
+      { name: "gsap", url: "{gsapUrl}" },
+      { name: "ScrollTrigger", url: "{scrollTriggerUrl}" },
+      { name: "SplitText", url: "{splitTextUrl}" },
+      { name: "Lenis", url: "{lenisUrl}" },
+      { name: "animationMain", url: "{animationsUrl}" },
+    ];
+
+    const loadScriptOnce = (name, url) =>
+      new Promise((resolve) => {
+        if (window[name]) return resolve();
+        const existing = document.querySelector(`script[data-inline-lib="${name}"]`);
+        if (existing) {
+          existing.addEventListener("load", () => resolve(), { once: true });
+          return;
+        }
+        const s = document.createElement("script");
+        s.src = url;
+        s.defer = true;
+        s.dataset.inlineLib = name;
+        s.onload = resolve;
+        document.head.appendChild(s);
+      });
+
+    const bootAnimations = async () => {
+      await Promise.all(libs.map((lib) => loadScriptOnce(lib.name, lib.url)));
+      if (typeof window.animationMain === "function") {
+        window.animationMain();
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bootAnimations, { once: true });
+    } else {
+      await bootAnimations();
     }
-  });
+
+    ["swup:contentReplaced", "swup:page:view"].forEach((evt) =>
+      document.addEventListener(evt, bootAnimations)
+    );
+  })();
 </script>
 <script src={cookieModalUrl} defer></script>
 

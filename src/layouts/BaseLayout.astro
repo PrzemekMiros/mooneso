@@ -76,7 +76,7 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
       .swup-transition {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 420ms ease, transform 420ms ease;
+        transition: opacity 220ms ease, transform 220ms ease;
       }
       html.is-changing .swup-transition {
         opacity: 0;
@@ -101,11 +101,19 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
     <Footer/>
     <script type="module" is:inline>
       import Swup from "https://unpkg.com/swup@4?module";
-      if (!window.__swup) {
-        window.__swup = new Swup({
-          containers: ["#swup"],
-          animateHistoryBrowsing: true,
-        });
+      const initSwup = () => {
+        if (!window.__swup) {
+          window.__swup = new Swup({
+            containers: ["#swup"],
+            animateHistoryBrowsing: true,
+          });
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initSwup, { once: true });
+      } else {
+        initSwup();
       }
     </script>
     <script is:inline>
@@ -127,12 +135,13 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
       };
 
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", applyBlurLazy);
+        document.addEventListener("DOMContentLoaded", applyBlurLazy, { once: true });
       } else {
         applyBlurLazy();
       }
-      document.addEventListener("astro:page-load", applyBlurLazy);
-      document.addEventListener("astro:after-swap", applyBlurLazy);
+      ["swup:contentReplaced", "swup:page:view"].forEach((evt) =>
+        document.addEventListener(evt, applyBlurLazy)
+      );
     </script>
   </body>
 </html>
