@@ -6,9 +6,8 @@ import sitemap from 'astro-sitemap';
 import remarkBannerStatic from './src/utils/remarkBannerStatic.js';
 
 export default defineConfig({
-  // Dla GitHub Pages (project site) potrzebujemy pełnego adresu i base zgodnego z nazwą repo.
-  site: 'https://przemekmiros.github.io/mooneso/',
-  base: '/mooneso',
+  site: 'https://mooneso.pl/',
+  base: '/',
   output: 'static',
   image: {
     // Generate optimized assets at build time instead of using the Netlify runtime endpoint
@@ -23,7 +22,7 @@ export default defineConfig({
       policy: [
         { userAgent: '*', allow: '/' }
       ],
-      sitemap: 'https://przemekmiros.github.io/mooneso/sitemap-index.xml'
+      sitemap: 'https://mooneso.pl/sitemap-index.xml'
     })
   ],
   markdown: {

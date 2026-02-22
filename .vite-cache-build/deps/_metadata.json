@@ -1,64 +1,64 @@
 {
-  "hash": "c347e509",
-  "configHash": "71580f56",
+  "hash": "8275c5ce",
+  "configHash": "7d3d7d96",
   "lockfileHash": "6d2b0766",
-  "browserHash": "3b0c76ec",
+  "browserHash": "59e038e8",
   "optimized": {
     "@astrojs/react/client.js": {
       "src": "../../node_modules/@astrojs/react/dist/client.js",
       "file": "@astrojs_react_client__js.js",
-      "fileHash": "639065e2",
+      "fileHash": "2a48545b",
       "needsInterop": false
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "13ada8f7",
+      "fileHash": "7b418951",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "fd57a7a9",
+      "fileHash": "70a147ba",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "b67e2ea6",
+      "fileHash": "247b29a1",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "2f57b994",
+      "fileHash": "9d0cb944",
       "needsInterop": true
     },
     "astro > cssesc": {
       "src": "../../node_modules/cssesc/cssesc.js",
       "file": "astro___cssesc.js",
-      "fileHash": "cc759280",
+      "fileHash": "8340cd11",
       "needsInterop": true
     },
     "astro > aria-query": {
       "src": "../../node_modules/aria-query/lib/index.js",
       "file": "astro___aria-query.js",
-      "fileHash": "679c49cc",
+      "fileHash": "ff386e25",
       "needsInterop": true
     },
     "astro > axobject-query": {
       "src": "../../node_modules/axobject-query/lib/index.js",
       "file": "astro___axobject-query.js",
-      "fileHash": "221f5f15",
+      "fileHash": "81337f8f",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-6HAALNQP": {
-      "file": "chunk-6HAALNQP.js"
+    "chunk-7C6SRZPD": {
+      "file": "chunk-7C6SRZPD.js"
     },
-    "chunk-RPB4AVCD": {
-      "file": "chunk-RPB4AVCD.js"
+    "chunk-2WFUEI4P": {
+      "file": "chunk-2WFUEI4P.js"
     },
     "chunk-5WRI5ZAA": {
       "file": "chunk-5WRI5ZAA.js"
