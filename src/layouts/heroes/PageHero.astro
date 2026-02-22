@@ -7,7 +7,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
 ---
 
 <section class="relative">
-    <div class="relative flex flex-col justify-center pb-8 pt-28 md:pb-16 md:pt-32 z-10">
+    <div class="relative max-w-4xl mx-auto pb-8 pt-28 md:pb-16 md:pt-32 text-center z-10">
       <nav
         class="text-[8px] md:text-[10px] uppercase tracking-[0.1em] text-gray-400 mb-3 md:mb-6 font-semibold"
         aria-label="Breadcrumb"
@@ -29,9 +29,12 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
           <meta itemprop="position" content="2" />
         </span>
       </nav>
-      <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight max-w-2xl">
-        {title}
-      </h1>
+            <h2 class="text-[9vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] tracking-tighter text-black uppercase split-chars">
+               {title}
+            </h2>
+            <p class="font-decorative text-[#C5A47E] text-[6vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] absolute top-1/2 right-0 translate-y-12 split-letters">
+                Furniture design
+            </p>
     </div>
 </section>
 
