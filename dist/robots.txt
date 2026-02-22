@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://mooneso.pl/sitemap-index.xml
+Sitemap: https://przemekmiros.github.io/mooneso/sitemap-index.xml
