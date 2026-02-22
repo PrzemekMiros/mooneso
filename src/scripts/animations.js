@@ -104,7 +104,7 @@ function animationMain() {
         delay: 0.3,
         ease: Expo.easeOut,
         stagger: {
-          amount: 0.5,
+          amount: 0.8,
           from: "0",
         },
         scrollTrigger: {

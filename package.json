@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
     "dev:astro": "astro dev",
-    "build": "astro build",
+    "clean": "node -e \"const fs=require('fs');['.astro','node_modules/.astro','.vite-cache','.vite-cache-build','dist'].forEach(p=>{try{fs.rmSync(p,{recursive:true,force:true});}catch{}});\"",
+    "build": "npm run clean && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy:cf": "npm run build && wrangler deploy --assets=./dist"
+    "deploy:cf": "npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
