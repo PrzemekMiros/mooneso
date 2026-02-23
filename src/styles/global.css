@@ -262,6 +262,10 @@ pre.astro-code {
   visibility: visible;
   transform: translateY(0);
 }
+
+  .circle-container.active.is-scrolling {
+    opacity: 0;
+  }
 }
 
 

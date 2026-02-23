@@ -160,56 +160,98 @@ import animationsUrl from "../scripts/animations.js?url";
 </div>
 
 <script>
-document.addEventListener("astro:page-load", function () {
-  const circleContainer = document.querySelector(".circle-container");
-  if (!circleContainer) return;
+(() => {
+  const initCircleProgress = () => {
+    const circleContainer = document.querySelector(".circle-container");
+    if (!circleContainer) return;
 
-  const offset = 50;
-  const circlePath = document.querySelector(".circle-container path");
-  const pathLength = circlePath.getTotalLength();
+    const circlePath = circleContainer.querySelector("path");
+    if (!circlePath) return;
 
-  circlePath.style.transition = circlePath.style.WebkitTransition = "none";
-  circlePath.style.strokeDasharray = pathLength;
-  circlePath.style.strokeDashoffset = pathLength;
-  requestAnimationFrame(() => {
+    const offset = 50;
+    const pathLength = circlePath.getTotalLength();
+
+    circlePath.style.transition = circlePath.style.WebkitTransition = "none";
+    circlePath.style.strokeDasharray = pathLength;
+    circlePath.style.strokeDashoffset = pathLength;
     requestAnimationFrame(() => {
-      circlePath.style.transition = circlePath.style.WebkitTransition =
-        "stroke-dashoffset 10ms linear";
+      requestAnimationFrame(() => {
+        circlePath.style.transition = circlePath.style.WebkitTransition =
+          "stroke-dashoffset 10ms linear";
+      });
     });
-  });
 
-  const updateLoader = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
-    const height = Math.max(1, docHeight - winHeight);
-    const progress = pathLength - (scrollTop * pathLength) / height;
-    circlePath.style.strokeDashoffset = progress;
+    const updateLoader = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const height = Math.max(1, docHeight - winHeight);
+      const progress = pathLength - (scrollTop * pathLength) / height;
+      circlePath.style.strokeDashoffset = progress;
 
-    if (scrollTop > offset) {
-      circleContainer.classList.add("active");
-    } else {
-      circleContainer.classList.remove("active");
+      if (scrollTop > offset) {
+        circleContainer.classList.add("active");
+      } else {
+        circleContainer.classList.remove("active");
+      }
+    };
+
+    if (window.__circleScrollHandler) {
+      window.removeEventListener("scroll", window.__circleScrollHandler);
+      window.__circleScrollHandler = null;
     }
+    if (window.__circleScrollTimeout) {
+      window.clearTimeout(window.__circleScrollTimeout);
+      window.__circleScrollTimeout = null;
+    }
+    if (window.__circleScrollElement && window.__circleScrollClickHandler) {
+      window.__circleScrollElement.removeEventListener("click", window.__circleScrollClickHandler);
+    }
+
+    let ticking = false;
+    const markScrolling = () => {
+      circleContainer.classList.add("is-scrolling");
+      if (window.__circleScrollTimeout) {
+        window.clearTimeout(window.__circleScrollTimeout);
+      }
+      window.__circleScrollTimeout = window.setTimeout(() => {
+        circleContainer.classList.remove("is-scrolling");
+      }, 150);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateLoader();
+        markScrolling();
+        ticking = false;
+      });
+    };
+
+    window.__circleScrollHandler = onScroll;
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const onClick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    window.__circleScrollElement = circleContainer;
+    window.__circleScrollClickHandler = onClick;
+    circleContainer.addEventListener("click", onClick);
+
+    updateLoader();
   };
 
-  let ticking = false;
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      updateLoader();
-      ticking = false;
-    });
-  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCircleProgress, { once: true });
+  } else {
+    initCircleProgress();
+  }
 
-  circleContainer.onclick = function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  updateLoader();
-});
+  ["swup:contentReplaced", "swup:page:view"].forEach((evt) =>
+    document.addEventListener(evt, initCircleProgress)
+  );
+})();
 </script>
 
 <script src={gsapUrl} defer></script>
