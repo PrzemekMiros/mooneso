@@ -1,6 +1,6 @@
 ﻿---
 title: Stół drewniany
-thumbnail: src/content/media/bed.png
+thumbnail: /src/content/media/bed.png
 description: Prosta i solidna komoda z litego drewna, która łączy naturalne usłojenie z ponadczasową formą.
 ---
 

@@ -1,6 +1,6 @@
 ﻿---
 title: Łóżko z litego drewna
-thumbnail: src/content/media/bed.png
+thumbnail: /src/content/media/bed.png
 description: Proste i solidne łóżko z litego drewna, które łączy naturalne usłojenie z ponadczasową formą.
 ---
 
