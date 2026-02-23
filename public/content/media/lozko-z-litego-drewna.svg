@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Lozko z litego drewna</title>
+  <desc id="desc">Minimalistyczna grafika lozka z litego drewna</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6efe7" />
+      <stop offset="100%" stop-color="#e7dccf" />
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a26a3a" />
+      <stop offset="100%" stop-color="#8a552b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect x="140" y="430" width="920" height="190" rx="28" fill="url(#wood)" />
+  <rect x="200" y="380" width="520" height="90" rx="22" fill="#caa27a" />
+  <rect x="220" y="520" width="760" height="90" rx="18" fill="#6f4521" />
+  <rect x="200" y="320" width="300" height="80" rx="20" fill="#e1c2a1" />
+  <rect x="520" y="320" width="300" height="80" rx="20" fill="#e1c2a1" />
+  <text x="140" y="230" font-family="Zalando Sans, Arial, sans-serif" font-size="46" fill="#2d1a0f">Solidne lozko z litego drewna</text>
+  <text x="140" y="280" font-family="Zalando Sans, Arial, sans-serif" font-size="26" fill="#3a2416">Minimalizm, stabilnosc, naturalne uslojenie</text>
+</svg>

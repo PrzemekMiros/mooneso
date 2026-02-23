@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import AboutImage from "../../assets/images/sections/wizual2.png";
 
 const contact = {
   title: "O nas"
@@ -9,11 +11,78 @@ const contact = {
 <BaseLayout
   title="O nas"
 >
-  <section class="pb-16 pt-12 md:pb-16 md:pt-16 min-h-full-screen">
-  <article class="max-w-3xl font-sans text-gray-700 leading-relaxed">
-
-
-  </article>
-
-  </section>
+<section class="relative pt-28 pb-36 md:pt-36">
+  <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+    <div class="space-y-6 max-w-xl">
+            <div class="reveal reveal--top">
+                <div class="parallax-wrap">
+                    <Image
+                      src={AboutImage}
+                      alt="Bedroom Furniture"
+                      class="w-full aspect-[8/10] object-cover"
+                      widths={[480, 640, 960, 1280]}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                </div>
+            </div>
+    </div>
+    <div class="">
+      <h2 class="text-4xl md:text-5xl tracking-tight uppercase mb-14 split-chars">
+        Lorem ipsum dolor sit amet
+      </h2>
+      <div class="line-x my-8"></div>
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-[minmax(140px,1fr)_minmax(0,6fr)] align-bottom">
+        <div class="">
+            <p class="font-decorative text-[#C5A47E] text-[4vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] split-letters">
+                1.
+            </p>
+        </div>
+        <div class="">
+                <h3 class="text-xl md:text-2xl mb-4 uppercase split-chars">
+                  Lorem ipsum dolor sit amet
+                </h3>
+                <p class="split-lines text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel ultrices malesuada pulvinar. Sollicitudin aliquet habitant porttitor euismod euismod venenatis phasellus. 
+                </p>
+        </div>
+      </div>
+      <div class="line-x my-8"></div>
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-[minmax(140px,1fr)_minmax(0,6fr)]">
+        <div class="">
+            <p class="font-decorative text-[#C5A47E] text-[4vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] split-letters">
+                2.
+            </p>
+        </div>
+        <div class="">
+                <h3 class="text-xl md:text-2xl mb-4 uppercase split-chars">
+                  Lorem ipsum dolor sit amet
+                </h3>
+                <p class="split-lines text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel ultrices malesuada pulvinar. Sollicitudin aliquet habitant porttitor euismod euismod venenatis phasellus. 
+                </p>
+        </div>
+      </div>
+      <div class="line-x my-8"></div>
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-[minmax(140px,1fr)_minmax(0,6fr)]">
+        <div class="">
+            <p class="font-decorative text-[#C5A47E] text-[4vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] split-letters">
+                3.
+            </p>
+        </div>
+        <div class="">
+                <h3 class="text-xl md:text-2xl mb-4 uppercase split-chars">
+                  Lorem ipsum dolor sit amet
+                </h3>
+                <p class="split-lines text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel ultrices malesuada pulvinar. Sollicitudin aliquet habitant porttitor euismod euismod venenatis phasellus. 
+                </p>
+        </div>
+      </div>
+      <div class="line-x my-8"></div>
+    </div>
+  </div>
+</section>
 </BaseLayout>
+

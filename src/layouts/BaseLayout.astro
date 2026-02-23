@@ -75,7 +75,7 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
       /* swup.js page transition */
       .swup-transition {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
         transition: opacity 220ms ease, transform 220ms ease;
       }
       html.is-changing .swup-transition {
@@ -90,15 +90,15 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
   </head>
   <body class="min-h-screen bg-[#E5E4E0] font-sans text-[var(--text)]">
     <Header settings={settings} logoAsset={logoAsset} />
-    <main
+    <main 
       id="swup"
-      class="swup-transition mx-auto flex min-h-screen w-full max-w-[1420px] flex-col px-4 sm:px-10 lg:px-12"
+      class="swup-transition mx-auto flex min-h-screen w-full max-w-[1420px] bg-[#E5E4E0] flex-col px-4 sm:px-10 lg:px-12"
     >
       {showHero && title ? <PageHero title={title} lead={description} meta={heroMeta} /> : null}
-      <slot />
+      <slot class="relative bg-[#E5E4E0] z-10"/>
+      <Footer/>
     </main>
 
-    <Footer/>
     <script type="module" is:inline>
       import Swup from "https://unpkg.com/swup@4?module";
       const initSwup = () => {

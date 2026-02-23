@@ -1,5 +1,55 @@
-<section class="relative pb-24 pt-36 md:pb-34 md:pt-50">
-  <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+---
+const productEntries = import.meta.glob("../../content/products/*.md", { eager: true });
+const products = Object.entries(productEntries)
+  .map(([path, module]) => {
+    const frontmatter = (module as { frontmatter?: Record<string, string> }).frontmatter ?? {};
+    const slug = path.split("/").pop()?.replace(".md", "") ?? "";
+    return {
+      slug,
+      title: frontmatter.title ?? slug,
+      thumbnail: frontmatter.thumbnail ?? "",
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title, "pl"));
+---
 
-  </div>
+<section class="relative pb-24 pt-36 md:pb-34 md:pt-50">
+
+       <div class="relative max-w-4xl mx-auto text-center mb-36">
+            <h2 class="text-[9vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] tracking-tighter text-black uppercase split-chars">
+               Popularne produkty
+            </h2>
+            <p class="font-decorative text-[#C5A47E] text-[6vw] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] absolute -bottom-14 right-30 split-letters">
+                Mooneso
+            </p>
+
+        </div>
+
+    <div class="grid gap-8 sm:grid-cols-3">
+      {products.length ? (
+        products.map((product) => (
+          <article class="relative overflow-hidden">
+            <div class="aspect-[3/4] w-full overflow-hidden reveal reveal--top">
+              {product.thumbnail ? (
+                <img
+                  src={product.thumbnail} 
+                  alt={product.title}
+                  class="h-full w-full object-cover"
+                />
+              ) : (
+                <div class="flex h-full w-full items-center justify-center text-xl uppercase tracking-[0.2em] text-gray-500">
+                  Brak zdjęcia
+                </div>
+              )}
+            </div>
+            <div class="mt-4">
+              <p class="text-xl font-semibold uppercase text-gray-900 fade-in">{product.title}</p>
+            </div>
+          </article>
+        ))
+      ) : (
+        <p class="text-gray-600">Brak produktów w katalogu.</p>
+      )}
+    </div>
+
 </section>

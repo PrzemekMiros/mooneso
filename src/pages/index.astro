@@ -4,6 +4,8 @@ import HeroFull from "../components/home/HeroFull.astro";
 import Description from "../components/home/Description.astro";
 import AboutUs from "../components/home/AboutUs.astro";
 import Parallax from "../components/home/Parallax.astro";
+import Products from "../components/home/Products.astro";
+import Social from "../components/home/Social.astro";
 import settings from "../content/ustawienia.json";
 
 const { site } = Astro;
@@ -29,5 +31,7 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
   <Description />
   <AboutUs />
   <Parallax />
+  <Products />
+  <Social />
 
 </BaseLayout>
