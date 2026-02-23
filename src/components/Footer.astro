@@ -181,8 +181,7 @@ import animationsUrl from "../scripts/animations.js?url";
       });
     });
 
-    const updateLoader = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const updateLoader = (scrollTop) => {
       const docHeight = document.documentElement.scrollHeight;
       const winHeight = window.innerHeight;
       const height = Math.max(1, docHeight - winHeight);
@@ -196,6 +195,10 @@ import animationsUrl from "../scripts/animations.js?url";
       }
     };
 
+    const setScrollingState = (isScrolling) => {
+      circleContainer.classList.toggle("is-scrolling", Boolean(isScrolling));
+    };
+
     if (window.__circleScrollHandler) {
       window.removeEventListener("scroll", window.__circleScrollHandler);
       window.__circleScrollHandler = null;
@@ -207,39 +210,86 @@ import animationsUrl from "../scripts/animations.js?url";
     if (window.__circleScrollElement && window.__circleScrollClickHandler) {
       window.__circleScrollElement.removeEventListener("click", window.__circleScrollClickHandler);
     }
-
-    let ticking = false;
-    const markScrolling = () => {
-      circleContainer.classList.add("is-scrolling");
-      if (window.__circleScrollTimeout) {
-        window.clearTimeout(window.__circleScrollTimeout);
-      }
-      window.__circleScrollTimeout = window.setTimeout(() => {
-        circleContainer.classList.remove("is-scrolling");
-      }, 150);
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        updateLoader();
-        markScrolling();
-        ticking = false;
-      });
-    };
-
-    window.__circleScrollHandler = onScroll;
-    window.addEventListener("scroll", onScroll, { passive: true });
+    if (window.__circleLenisUnsub) {
+      window.__circleLenisUnsub();
+      window.__circleLenisUnsub = null;
+    }
+    if (window.__circleLenisWatchTimer) {
+      window.clearInterval(window.__circleLenisWatchTimer);
+      window.__circleLenisWatchTimer = null;
+    }
 
     const onClick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const lenis = window.__lenisInstance;
+      if (lenis && typeof lenis.scrollTo === "function") {
+        lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     };
     window.__circleScrollElement = circleContainer;
     window.__circleScrollClickHandler = onClick;
     circleContainer.addEventListener("click", onClick);
 
-    updateLoader();
+    const attachNativeScroll = () => {
+      let ticking = false;
+      const markScrolling = () => {
+        circleContainer.classList.add("is-scrolling");
+        if (window.__circleScrollTimeout) {
+          window.clearTimeout(window.__circleScrollTimeout);
+        }
+        window.__circleScrollTimeout = window.setTimeout(() => {
+          circleContainer.classList.remove("is-scrolling");
+        }, 150);
+      };
+
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          updateLoader(scrollTop);
+          markScrolling();
+          ticking = false;
+        });
+      };
+
+      window.__circleScrollHandler = onScroll;
+      window.addEventListener("scroll", onScroll, { passive: true });
+      updateLoader(window.scrollY || document.documentElement.scrollTop);
+    };
+
+    const attachLenisScroll = (lenis) => {
+      if (!lenis || typeof lenis.on !== "function") return false;
+      window.__circleLenisUnsub = lenis.on("scroll", (instance) => {
+        const scrollTop = instance.scroll;
+        updateLoader(scrollTop);
+        setScrollingState(instance.isScrolling);
+      });
+      updateLoader(lenis.scroll);
+      setScrollingState(lenis.isScrolling);
+      return true;
+    };
+
+    const lenis = window.__lenisInstance;
+    if (!attachLenisScroll(lenis)) {
+      attachNativeScroll();
+      window.__circleLenisWatchTimer = window.setInterval(() => {
+        const liveLenis = window.__lenisInstance;
+        if (attachLenisScroll(liveLenis)) {
+          if (window.__circleScrollHandler) {
+            window.removeEventListener("scroll", window.__circleScrollHandler);
+            window.__circleScrollHandler = null;
+          }
+          if (window.__circleScrollTimeout) {
+            window.clearTimeout(window.__circleScrollTimeout);
+            window.__circleScrollTimeout = null;
+          }
+          window.clearInterval(window.__circleLenisWatchTimer);
+          window.__circleLenisWatchTimer = null;
+        }
+      }, 200);
+    }
   };
 
   if (document.readyState === "loading") {
